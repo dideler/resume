@@ -1,0 +1,128 @@
+% LaTeX resume using res.cls
+\documentclass[margin]{res}
+%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
+%\usepackage{newcent}   % uses new century schoolbook postscript font 
+\setlength{\textwidth}{5.1in} % set width of text portion -- try higher (eg 6.0) if not enough space
+
+\begin{document}
+
+%% TODO: make title look better and try to save some space
+
+% Option A
+%% Center the name over the entire width of resume:
+% \moveleft.5\hoffset\centerline{\large\bf Dennis Ideler}
+%% Draw a horizontal line the whole width of resume:
+% \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
+%% address begins here
+%% Again, the address lines must be centered over entire width of resume:
+% \moveleft.5\hoffset\centerline{214 Pelham Road}
+% \moveleft.5\hoffset\centerline{St. Catharines, Ontario L2S 1W9}
+% \moveleft.5\hoffset\centerline{289-697-1010}
+% \moveleft.5\hoffset\centerline{dennisideler.com}
+% \moveleft.5\hoffset\centerline{ideler.dennis@gmail.com}
+
+% Option B
+% Center the name over the entire width of resume:
+% \moveleft.5\hoffset\centerline{\large\bf Dennis Ideler}
+\moveleft1\hoffset\hbox{\large{\bf{Dennis Ideler}} $\bullet$ St. Catharines, ON L2S 1W9 $\bullet$
+289-697-1010 $\bullet$ ideler.dennis@gmail.com}
+% Draw a horizontal line the whole width of resume:
+ \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
+
+% Option C
+%% Center the name over the entire width of resume:
+% \moveleft.5\hoffset\centerline{\large\bf Dennis Ideler}
+%% Draw a horizontal line the whole width of resume:
+% \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
+
+\begin{resume}
+
+%\section{CONTACT INFO}
+%  {\sl Address:} 214 Pelham Rd, St. Catharines, Ontario L2S 1W9 \\
+%  {\sl Phone:} 289-697-1010 \\
+%  {\sl Website:} dennisideler.com \\
+%  {\sl Email:} ideler.dennis@gmail.com
+
+%% TODO: Use an objective when looking for a permanent or specific position.
+%%       See my LinkedIn objective.
+%% OR add "Contact Information" section.
+% See www.cs.brown.edu/people/avladu/resume.pdf
+%     people.seas.harvard.edu/~minilek/cv.pdf
+%     www.chris-wong.net/resume/
+
+%\section{OBJECTIVE}  A position in the field of computers with special 
+%                interests in business applications programming, 
+%                information processing, and management systems. 
+
+% TODO: bold appropriate sections
+% TODO: move education lower or keep at the top?
+% TODO: move dates to the LHS?
+\section{EDUCATION}
+  {\sl Bachelor of Science (B.Sc.),} Computer Science (Honours \& Co-op) \\
+  % \sl will be bold italic in New Century Schoolbook
+	% (or any postscript font) and just slanted in Computer Modern (default) font
+  Concentration in Intelligent Systems \\
+  Brock University, St. Catharines, Ontario, 
+  \hfill September 2007 - Present \\
+  % TODO: itemized list with school accomplishments
+                
+  {\sl Voorbereidend Wetenschappelijk Onderwijs (VWO),} Natuur en Techniek \\
+  or {\sl Pre-university Secondary Education,} Nature and Technology \\
+  Milton Peters College, St. Maarten, Netherlands Antilles, 
+  \hfill August 2001 - June 2007 \\
+	% TODO: itemized list with school accomplishments
+
+% TODO: bold appropriate sections
+% TODO: create categories (Beginner, Intermediate, Advanced, Proficient, Fluent)
+\section{COMPUTER \\ SKILLS}
+	{\sl \textbf{Languages:}} C, C++, Java, Prolog, Ruby, HTML,
+	JavaScript, SQL, Unix Shell Scripting, Common Lisp, LC-3 Assembler. \\
+	{\sl \textbf{Software:}} Subversion (SVN), Git, LaTeX,
+	MS SharePoint 2007, phpBB3, Mathematica, Maple, Minitab \\
+	{\sl \textbf{Operating Systems:}} GNU/Linux, MS Windows (XP/Vista/7)
+ 
+\section{EXPERIENCE}
+	{\sl Business Analyst \& Information Architect} \hfill Spring, Summer, Fall 2010 \\
+    Ministry of Transportation of Ontario,
+    Business Support Policy \& Planning Unit, St. Catharines, ON 
+	\begin{itemize}  \itemsep -2pt %reduce space between items
+    \item Developed four ``user friendly" forecasting systems each of
+    which produces 18 to 139 individual reports. 
+    \item Developed or improved almost all IFPS programs used for financial reports.
+	\end{itemize}
+	
+	{\sl Research Programmer} \hfill Summer 1990 \\
+    Psychology Department, Rensselaer Polytechnic Institute 
+	\begin{itemize}  \itemsep -2pt %reduce space between items
+    \item Performed computer aided statistical analysis of data. 
+    \end{itemize} 
+        
+	{\sl Assistant Manager} \hfill Summers 1988-89 \\
+    Thunder Restaurant, Canton, CT
+	\begin{itemize}
+    \item Recognized need for, developed, and wrote employee training manual.
+    Performed various duties including cooking, employee training, ordering, and inventory control.
+	\end{itemize} 
+ 
+\section{COMMUNITY \\ SERVICE}
+	Organized and directed the 1988 and 1989 Grand Marshall Week \newline ``Basketball Marathon.''
+	A 24 hour charity event to benefit the Troy Boys Club. Over 250 people participated each year. 
+
+\section{EXTRA-CURRICULAR \\ INVOLVEMENT}             
+            Elected {\it House Manager}, Rho Phi Sorority \\
+            Elected {\it Sports Chairman} \\
+            Attended Krannet Leadership Conference \\
+                Headed delegation to Rho Phi Congress \\
+                Junior varsity basketball team \\
+                Participant, seven intramural athletic teams 
+ 
+\section{ADDITIONAL \\QUALIFICATIONS}
+			Fluent in English and Dutch
+
+% TODO: References
+\end{resume}
+\end{document}
+
+
+
+
