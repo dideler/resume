@@ -4,6 +4,11 @@
 %\usepackage{newcent}   % uses new century schoolbook postscript font 
 \setlength{\textwidth}{5.1in} % set width of text portion -- try higher (eg 6.0) if not enough space
 
+%\addtolength{\textwidth}{2cm}
+%\addtolength{\hoffset}{-1cm}
+%\addtolength{\textheight}{2cm}
+\addtolength{\voffset}{-2cm}
+
 \begin{document}
 
 % TODO: Make title look better and try to save some space!
@@ -26,9 +31,10 @@
 % Option C: Name with horizontal line below. Contact info right below and on the same line.
 % \moveleft1\hoffset\hbox{\large{\bf{DENNIS IDELER}}} % Use this one for a left-justified name.
  \moveleft.5\hoffset\centerline{\large\bf DENNIS IDELER} % This name option is centred.
- \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
+% \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
  \moveleft.5\hoffset\centerline{214 Pelham Rd, St. Catharines, ON L2S 1W9 $\bullet$
- 289-697-1010 $\bullet$ di07ty@brocku.ca $\bullet$ dennisideler.com}
+ 289-697-1010 $\bullet$ di07ty@brocku.ca $\bullet$ www.dennisideler.com}
+ \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
 
 %% Option D: Name with horizontal line, and CONTACT INFO section below.
 % \moveleft.5\hoffset\centerline{\large\bf Dennis Ideler} % Center name over entire width of resume
@@ -69,34 +75,80 @@
 
 % TODO: Bold appropriate sections
 %       Create categories (Beginner, Intermediate, Advanced, Proficient, Fluent)?
-%       See my LinkedIn resume (specialties)!
-\section{COMPUTER \\ SKILLS}
-	{\sl \textbf{Languages:}} C, C++, Java, Prolog, Ruby, HTML,
-	JavaScript, SQL, Unix Shell Scripting, Common Lisp, LC-3 Assembler, \LaTeX. \\
-	{\sl \textbf{Software:}} Subversion (SVN), Git, LaTeX,
-	MS SharePoint 2007, phpBB3, Mathematica, Maple, Minitab \\
-	{\sl \textbf{Operating Systems:}} GNU/Linux, MS Windows (XP/Vista/7)
-	 
-% TODO:  Add Freeseer
+
+\section{TECHNICAL \\ SKILLS}
+	\begin{tabular}{l l}
+	{\sl \textbf{Software Development:}} &
+  C/C++, Java, Prolog, Linux Shell Scripting \\ &
+  Ruby, Python, LC-3 Assembler \\
+
+	{\sl \textbf{Web Development:}} &
+	HTML, CSS, JavaScript \\
+
+	{\sl \textbf{Mobile Development:}} &
+	Windows Phone 7 \\
+
+	{\sl \textbf{Source Control:}} &
+	Git, Subversion (SVN), GitHub, Google Code \\
+
+	{\sl \textbf{API's/Libraries:}} &
+	OpenGL, jQuery \\
+
+	{\sl \textbf{Technical Writing:}} &
+	\LaTeX, UML, MS Office \\
+
+	{\sl \textbf{Business Collaboration Software:}} &
+  MS SharePoint 2007/2010, Trac, phpBB3 \\
+	  
+	{\sl \textbf{Database:}} &	  
+  SQL \\	  
+	  
+	{\sl \textbf{Operating Systems:}} &
+  GNU/Linux, MS Windows (XP/Vista/7)
+
+	\end{tabular}	 
+
 \section{EXPERIENCE}
-	{\sl Business Analyst \& Information Architect} \hfill Spring, Summer, Fall 2010 \\
-    Ministry of Transportation of Ontario,
-    Business Support Policy \& Planning Unit, St. Catharines, ON 
-	\begin{itemize}  \itemsep -2pt %reduce space between items
-    \item Developed four ``user friendly" forecasting systems each of
-    which produces 18 to 139 individual reports. 
-    \item Developed or improved almost all IFPS programs used for financial reports.
+
+	\textbf{Free and Open Source Software Learning Centre} \hfill Sept - Dec 2011 \\
+    {\sl Technical Writer for Freeseer project} \hfill % freeseer.github.com
+	\begin{itemize}  \itemsep -2pt % Reduce space between items.
+	  \item First Brock student to participate in the Undergraduate Capstone Open Source Projects
+	  (UCOSP) program. My case is being used to attract other students.
+	  \item Used agile and open source processes in a distributed development environment.
+	  \item Localized Freeseer to Dutch by translating the software interface and messages.
+	  \item Designed and built a home page for the project using HTML5 standards.
+    \item Wrote a new simplified README with focus on readability and content.
+	  \item Wrote a Wikipedia article for Freeseer from a neutral perspective.
+	  \item Wrote comprehensive user and contributor documentation using Sphinx.
+	  \item Collaborated as a team player while posting and updating issues,
+	  communicating via IRC, mailing list, video conferencing, and blog posts.
+	  \item Frequently presented new ideas, suggestions, feedback, and constructive criticism to the team.
 	\end{itemize}
-	
-	% TODO: See my MTO Work experience file on Google Docs
-%•	Migrating contents from Microsoft SharePoint 2003 to Microsoft SharePoint 2007
-%•	Administrate OPS(Ontario Provincial Services) wide SharePoint intranet sites
-%   and providing support for the users
-%•	Keeping the contents of Traveller's Road Information Portal(TRIP) up to date to provide the
-%   latest information about the road conditions and service centers to the end users
-%•	Modified ministry websites to meet ODA(Ontario Disability Act) compliance
-%•	Improved efficiency by using virtual machines to ensure the changes are appropriate
-%   to deploy on the production sites
+
+	\textbf{Ministry of Transportation of Ontario} \hfill May - Dec 2010 \\
+    {\sl Co-op Student \footnote{The MTO does not give official titles to co-op students,
+    they all get the "Co-op Student" title.}} \hfill St. Catharines, Ontario
+	\begin{itemize}  \itemsep -2pt % Reduce space between items.
+	  \item Performed the duties of a Business Analyst \& Information Architect % Systems Analyst?
+	  while working on a team in the Business Support Policy \& Planning Unit.
+	\end{itemize}
+
+% TODO: See my MTO Work experience file on Google Docs
+% •	Migrating contents from Microsoft SharePoint 2003 to Microsoft SharePoint 2007
+% •	Administrate OPS(Ontario Provincial Services) wide SharePoint intranet sites
+%    and providing support for the users
+% •	Keeping the contents of Traveller's Road Information Portal(TRIP) up to date to provide the
+%    latest information about the road conditions and service centers to the end users
+% •	Modified ministry websites to meet ODA(Ontario Disability Act) compliance
+% •	Improved efficiency by using virtual machines to ensure the changes are appropriate
+%    to deploy on the production sites
+
+	\textbf{GenieKnows Inc.} \hfill Jan - Apr 2009 \\
+    {\sl Data Specialist} \hfill Halifax, Nova Scotia
+	\begin{itemize}  \itemsep -2pt % Reduce space between items.
+	  \item TODO
+	\end{itemize}
 	
 	{\sl Research Programmer} \hfill Summer 1990 \\
     Psychology Department, Rensselaer Polytechnic Institute 
@@ -121,13 +173,14 @@
 \section{TECHNICAL PROJECTS}
   TODO
 
-\section{EXTRA-CURRICULAR \\ INVOLVEMENT} % TODO: Add Computer Science Fair 2011 (also to LinkedIn)
+\section{EXTRA-CURRICULAR \\ INVOLVEMENT}
             Elected {\it House Manager}, Rho Phi Sorority \\
             Elected {\it Sports Chairman} \\
             Attended Krannet Leadership Conference \\
                 Headed delegation to Rho Phi Congress \\
                 Junior varsity basketball team \\
                 Participant, seven intramural athletic teams 
+% TODO: Add Computer Science Fair 2011 (also to LinkedIn) for CS Education Week 
  
 \section{ADDITIONAL \\QUALIFICATIONS}
 			Fluent in English and Dutch
