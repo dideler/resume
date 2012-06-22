@@ -1,3 +1,6 @@
 TODO:
 - Finish .tex version
-- Add a .doc version
+- Add a .doc or text version
+  See http://www.tex.ac.uk/cgi-bin/texfaq2html?label=fmtconv+toascii
+- Discovered this neat tutorial after I wrote my resume already:
+  http://texblog.org/2012/04/25/writing-a-cv-in-latex/
