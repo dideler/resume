@@ -1,285 +1,275 @@
-% LaTeX resume using res.cls
-\documentclass[margin]{res}
-%\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
-%\usepackage{newcent}   % uses new century schoolbook postscript font 
-\setlength{\textwidth}{5.1in} % set width of text portion -- try higher (eg 6.0) if not enough space
-
-%\addtolength{\textwidth}{2cm}
-%\addtolength{\hoffset}{-1cm}
-%\addtolength{\textheight}{2cm}
-\addtolength{\voffset}{-2cm}
-
-\begin{document}
-
-% TODO: Make title look better and try to save some space!
-% REMINDER: ctrl+t = comment, ctrl+u = uncomment (in Texmaker)
-
-%% Option A: Name centred followed by a horizontal line. Contact info centred below the line.
-% \moveleft.5\hoffset\centerline{\large\bf Dennis Ideler} % Center name over entire width of resume
-% \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Draw line the width of resume
-% \moveleft.5\hoffset\centerline{214 Pelham Road}
-% \moveleft.5\hoffset\centerline{St. Catharines, Ontario L2S 1W9}
-% \moveleft.5\hoffset\centerline{289-697-1010}
-% \moveleft.5\hoffset\centerline{dennisideler.com}
-% \moveleft.5\hoffset\centerline{ideler.dennis@gmail.com}
-
-%% Option B: Name and contact info on the same line, with a horizontal line below.
-% \moveleft1\hoffset\hbox{\large{\bf{DENNIS IDELER}} $\bullet$ St. Catharines, ON L2S 1W9 $\bullet$
-%  289-697-1010 $\bullet$ di07ty@brocku.ca} % Use ideler.dennis@gmail.com when I graduate?
-% \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
-
-%% Option C: Name with horizontal line below. Contact info right below and on the same line.
-%% \moveleft1\hoffset\hbox{\large{\bf{DENNIS IDELER}}} % Use this one for a left-justified name.
-% \moveleft.5\hoffset\centerline{\large\bf DENNIS IDELER} % This name option is centred.
-%% \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
-% \moveleft.5\hoffset\centerline{23 Woodcrest Dr, St.\hspace{2 pt}Catharines, ON L2T 2Y2 $\bullet$
-% 289-697-1010 $\bullet$ di07ty@brocku.ca $\bullet$ www.dennisideler.com}
-% \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip
-
-% Option D: Name with horizontal line, and CONTACT INFO section below.
- \moveleft.5\hoffset\centerline{\large\bf \Huge Dennis Ideler} % Center name over entire width of resume
- \moveleft\hoffset\vbox{\hrule width\resumewidth height 1pt}\smallskip % Draw line the width of resume
-
-\begin{resume}
-
-\section{CONTACT INFO} % This belongs to title option D
-\begin{tabular}{l l}
-  {\sl Address:} & 23 Woodcrest Dr, St.\hspace{2 pt}Catharines, Ontario L2T 2Y2 \\
-  {\sl Phone:} & 289-697-1010 \\
-  {\sl Website:} & www.dennisideler.com \\ % TODO: add linkedin and github?
-  {\sl Email:} & ideler.dennis@gmail.com
-\end{tabular} 
-
-% Use an objective when looking for a permanent or specific position.
-% E.g. See my LinkedIn objective.
-
-%\section{OBJECTIVE}  A position in the field of computers with special 
-%                interests in business applications programming, 
-%                information processing, and management systems. 
-
-% TODO: move education lower or keep at the top?
-\section{EDUCATION}
-  {\sl Bachelor of Science (B.Sc.),} Computer Science (Honours \& Co-op) \\
-  % \sl will be bold italic in New Century Schoolbook
-	% (or any postscript font) and just slanted in Computer Modern (default) font
-  Concentration in Intelligent Systems \\
-  Brock University, St.\hspace{2 pt}Catharines, Ontario
-  \hfill Sep 2007 - expected Jun 2013 \\
-  % TODO: itemized list with school accomplishments?
-                
-% TODO: Create categories (Beginner, Intermediate, Advanced, Proficient, Fluent)?
-
-\section{TECHNICAL \\ SKILLS}
-	\begin{tabular}{l l}
-	{\sl \textbf{Software Development:}} &
-  C++, C, Java, Prolog, Python, \\ (in order of proficiency) &
-  Linux Shell Scripting, Ruby, LC-3 Assembler \\
-
-	{\sl \textbf{Web Development:}} &
-	HTML, CSS, JavaScript \\
-
-	{\sl \textbf{Mobile Development:}} &
-	Android, Windows Phone 7 \\
-
-	{\sl \textbf{Source Control:}} &
-	Git, Subversion (SVN), GitHub, Google Code \\
-
-	{\sl \textbf{API's/Libraries:}} &
-	OpenGL, jQuery \\
-
-	{\sl \textbf{Technical Writing:}} &
-	\LaTeX, UML, Markdown, reStructuredText \\
-
-	{\sl \textbf{Business Collaboration Software:}} &
-  MS SharePoint, IRC, Trac, phpBB3 \\
-	  
-	{\sl \textbf{Database:}} &	  
-  SQL \\	  
-	  
-	{\sl \textbf{Operating Systems:}} &
-  GNU/Linux, MS Windows (XP/Vista/7)
-
-	\end{tabular}	 
-
-\section{EXPERIENCE}
-% STAR: Situation, Task, Action, Result
-% BAR: Background, Action, Result
-
-	\textbf{Free and Open Source Software Learning Centre} \hfill Sep 2011 - present \\
-    {\sl Contributor \& Mentor for Freeseer project} \hfill % freeseer.github.com
-	\begin{itemize}  \itemsep -2pt % Reduce space between items.
-	  \item Wrote and maintain Freeseer's comprehensive documentation
-	  % Dutch translation, new home page, new readme, wikipedia article, online docs
-	  \item Collaborate using agile and open source processes in a distributed environment
-	  \item Provide mentorship to student interns who contribute through Google Summer of Code (GSoC)
-	        and Undergraduate Capstone Open Source Programs (UCOSP)
-	\end{itemize}
-
-	\textbf{Ministry of Transportation of Ontario} \hfill May - Dec 2010 \\
-    {\sl Systems Analyst (Co-op Student)} \hfill St.\hspace{2 pt}Catharines, Ontario % & Information Architect
-	\begin{itemize}  \itemsep -2pt % Reduce space between items.
-	  \item Team member of the Business Support, Policy \& Planning Unit.
-	  Responsible for assisting clients in the ministry with consultation, technical support,
-	  and software solutions.
-	  \item Worked with supervisors, co-workers and consultants to architect, fabricate,
-	  and maintain a new ministry-wide Intranet which utilized SharePoint 2007.
-	  \item Responsible for updating the Major Applications Portfolio Strategy (MAPS) database.
-	  Interviewed several project managers in a timely fashion to extract information from 30+
-	  projects. Project information is used for risk assessment.
-	  \item Refactored an embedded security request form that was used throughout the
-	  Ontario Public Sector to request new keycards. Improved performance and design,
-	  implemented new features, and fixed bugs. Wrote approximately 1000 lines of negative code
-	  by removing redundancies \& using more concise constructs.
-	  \item Collaborated with business architects on the Training Management System project
-	  to produce class diagrams, system context diagrams, system use case models,
-	  an access control matrix, and a GUI design specification guide.
-	\end{itemize}
-
-% LinkedIn
-% ===========
-% Business Support, Policy & Planning Unit (BSPPU) is a unit in the Labour & Transportation Cluster.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Template: Curriculum Vitae
 %
-%Projects I contributed to include (but not limited to):
-%• MTO Intranet Migration Project (IMP)
-%• Training Management System (TMS)
-%• Major Applications Portfolio Strategy (MAPS)
-%• eLearning Project
-%• Security eForm
-%• Green IT Initiative
+% Source: http://www.howtotex.com/
+% Feel free to distribute this template, but please keep the
+% referal to HowToTeX.com.
+% Date: July 2011
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% How to use writeLaTeX: 
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook is a great place to start:
+% http://en.wikibooks.org/wiki/LaTeX
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+							
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage{amsmath,amsfonts,amsthm}     % Math packages
+\usepackage{graphicx}                    % Enable pdflatex
+\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{geometry}
+	\textheight=700px                    % Saving trees ;-)
+\usepackage{url}
 
-% G Docs
-% =======
-% https://docs.google.com/document/d/1SYv0lMJ08cerV27jlB9FtcZMBzTrjjNJKbDexYbnge0/edit?hl=en_US
+\frenchspacing              % Better looking spacings after periods
+\pagestyle{empty}           % No pagenumbers/headers/footers
 
-	\textbf{Maestro Media Center} \hfill Sep 2009 - Apr 2010 \\
-    {\sl Deputy Leader} \hfill St.\hspace{2 pt}Catharines, Ontario
-	\begin{itemize}  \itemsep -2pt % Reduce space between items.
-	  \item Demonstrated strong leadership skills as the deputy leader of a 7-person team for a $3^{rd}$
-	  year Software Engineering course at Brock University.
-	  \item Used agile software development methodologies to create a fully functional, cross-platform,
-	  media center. See code.google.com/p/brockbots
-	  \item Utilized strong communication and listening skills when dealing with the client
-	  (our professor) and teammates on a weekly basis via meetings and emails.
-	  \item Demonstrated the ability to work effectively in a team and set and achieve realistic
-	  goals by organizing, planning, and executing tasks and meeting deliverables on schedule.
-	  \item Maintained a positive attitude during minor project failures and encouraged teammates
-	  rather than discouraging them. For example, influenced teammates to use pair programming
-	  when they were having difficulty with some coding tasks, which resulted in quicker
-	  completion, more team communication, and an overall better understanding of the project for
-	  those involved.
-	  \item Received an outstanding peer review and successfully delivered a project on time with my team.
-	  Our team produced the highest graded project that year.
-	\end{itemize}
+%%% Custom sectioning (sectsty package)
+%%% ------------------------------------------------------------
+\usepackage{sectsty}
 
-	\textbf{GenieKnows Inc.} \hfill Jan - Apr 2009 \\
-    {\sl Data Specialist (Co-op Student)} \hfill Halifax, Nova Scotia
-	\begin{itemize}  \itemsep -2pt % Reduce space between items.
-	  \item Enhanced business data for results used to provide the search and mapping features of
-	  GenieKnows Local Search (now yellowee.com).
-	  Responsible for collection of data from various sources through Automated Data Collection.
-	  \item Daily duties included: identifying data requirements,
-	  researching data sources, automating the downloading and processing/formatting of data,
-	  evaluating data quality, writing technical documentation, logging bugs, and logging progress.
-	  \item Simulated user activity to overcome the ``ghost town'' effect shortly after user
-	  profiles and business reviews were introduced. % TODO: keep or remove?
-	  \item Researched methods and implementations of specialized crawling and presented findings
-	  to R\&D team.
-	  Utilized knowledge to develop specialized web crawlers for pages on the Surface Web and Deep Web.
-	  \item Collaborated in teams to present creative ideas during research meetings and company-wide
-	  brainstorming activities.
-	\end{itemize}
+\sectionfont{%			            % Change font of \section command
+	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
+	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
 
-	\textbf{Antek: IT Solutions \& Software} \hfill Jun - Sep 2008 \\
-    {\sl Computer Technician (Holiday Worker)} \hfill Sint Maarten, Caribbean
-	\begin{itemize}  \itemsep -2pt % Reduce space between items.
-	  \item Utilized creative problem solving skills and an analytic approach to set up, diagnose,
-	  and repair computers, hardware, software, and networks.
-	  \item Assisted clients with friendly customer service and technical support.
-	  \item Quickly adapted to different work environments and situations when executing tasks at
-	  diverse organizations and working in a team or individually.
-	\end{itemize}
+%%% Macros
+%%% ------------------------------------------------------------
+\newlength{\spacebox}
+\settowidth{\spacebox}{8888888888}			% Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
 
-\vfill
+\newcommand{\MyName}[1]{ % Name
+		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+		\par \normalsize \normalfont}
+		
+\newcommand{\MySlogan}[1]{ % Slogan (optional)
+		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+		\par \normalsize \normalfont}
 
-\section{HONOURS \\ AND AWARDS}
+\newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
 
-  \textbf{Dean's Honour List} \hfill 2011 \\
-    {\sl Brock University, Faculty of Mathematics and Science}
+\newcommand{\PersonalEntry}[2]{
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}		       % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
 
-  \textbf{Best Elected Residence Action Council Member} \hfill 2008 \\
-    {\sl Brock University, Quarry View Residence}
+\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value	
 
-  \textbf{Government of Sint Maarten Study Financing Grant} \hfill 2007 - Present \\
-    {\sl Ministry of Education, Island of Saint Martin}
- 
-\section{COMPETITIONS}
+\newcommand{\AwardsEntry}[2]{      % Same as \PersonalEntry
+		\noindent\hangindent=2em\hangafter=0 % Indentation
+		\parbox{\spacebox}{        % Box to align text
+		\textit{#1}}			   % Entry name (birth, address, etc.)
+		\hspace{1.5em} #2 \par}    % Entry value
 
-  \textbf{ACM-ICPC East Central North America} \hfill Oct 2008, 2009, 2010, 2011 \\
-    {\sl International Collegiate Programming Contest} \\
-    {\sl McMaster University, University of Windsor} % TODO: consider removing this line (save space).
+\newcommand{\EducationEntry}[4]{
+		\noindent \textbf{#1} \hfill      % Study
+		\colorbox{Black}{%
+			\parbox{8.9em}{%
+			\hfill\color{White}#2}} \par  % Duration
+		\noindent \textit{#3} \par        % School
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
 
-  \textbf{Great Canadian Appathon} \hfill Mar 2011 \\
-    {\sl Team placed in top 25 of the national competition} \\
-    {\sl University of Waterloo hub}
+\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{%
+			\parbox{9em}{%
+			\hfill\color{White}#2}} \par  % Duration
+        \noindent \textit{#3} \par        % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
 
-  \textbf{Computer Science Games} \hfill Mar 2010, 2011 \\
-    {\sl Team placed in top 10} \\
-    {\sl Polytechnique de Montreal, Concordia University}
+\newcommand{\OrganizationEntry}[4]{		  % Similar to \EducationEntry
+		\noindent \textbf{#1} \hfill      % Jobname
+		\colorbox{Black}{\color{White}#2} \par  % Duration
+		\noindent \textit{#3} \par              % Company
+		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
+		\normalsize \par}
 
-%  \textbf{GameBattles: Halo 2} \hfill Summer 2007 \\
-%    {\sl Team placed 1st in the Halo 2 4v4 online ladder} \\
-%    {\sl GameBattles.com}
+%%% Begin Document
+%%% ------------------------------------------------------------
+\begin{document}
+% you can upload a photo and include it here...
+%\begin{wrapfigure}{l}{0.5\textwidth}
+%	\vspace*{-2em}
+%		\includegraphics[width=0.15\textwidth]{photo}
+%\end{wrapfigure}
 
-  \textbf{Mathematics A-lympiad Preliminaries} \hfill Mar 2006 \\
-    {\sl Team placed 2nd in the regional qualifier} \\
-    {\sl Milton Peters College, Sint Maarten}
+\MyName{Dennis Ideler} % use \smallskip if using slogan
+%\MySlogan{github.com/dideler \qquad dennisideler.com \qquad ideler.dennis@gmail.com}
 
-  \textbf{St. Maarten Science Fair} \hfill Apr 2005 \\
-    {\sl Presented a solution to an enormous traffic congestion problem} \\
-    {\sl Milton Peters College, Sint Maarten}
+\sepspace
 
-%\section{TECHNICAL PROJECTS}
-%  TODO
+%%% Personal details
+%%% ------------------------------------------------------------
+\NewPart{Contact Info}{}
 
-\section{EXTRA-CURRICULAR \\ INVOLVEMENT}
+\PersonalEntry{Website}{\url{dennisideler.com}}
+\PersonalEntry{GitHub}{\url{github.com/dideler}}
+\PersonalEntry{Email}{\url{ideler.dennis@gmail.com}}
 
-  \textbf{Judge for Niagara Secondary Schools Programming Contest} \hfill May '11 - '12 \\
-    {\sl Computer Science Department, Brock University}
+%%% Education
+%%% ------------------------------------------------------------
+\NewPart{Education}{}
 
-  \textbf{Volunteer at Computer Science Fair for CSEdWeek} \hfill Dec '11 - '12\\
-    {\sl Computer Science Department, Brock University}
+\EducationEntry{BSc. Computer Science (Honours \& Co-op)}
+{Sep 2007 - Jun 2013}
+{Brock University, Ontario, Canada}
+{
+ \begin{itemize}  \itemsep -1pt % Reduce space between items.
+   \item Concentration in Intelligent Systems (Artificial Intelligence)
+   \item Tutor for introductory COSC, MATH, and APCO courses, 2011-2013
+   \item Judge for the Niagara Region Secondary Schools Programming Contest, 2011-2012
+   \item Representative at Ontario Universities' Fair, Fall Preview Day,
+   and CSEdWeek, 2009, 2012
+   \item Guest speaker at Co-op Student Panel Workshop, 2010-2012
+   \item Co-founded Chess Club and BrockBots, a computer science
+   message board, 2009-2010
+   \item Deputy leader of a 7-person team that produced a cross-platform media center, 2009-2010
+ \end{itemize}
+}
 
-  \textbf{Guest speaker at Co-op Student Panel Workshop} \hfill Oct 2010 \\
-    {\sl Co-op Office, Brock University}
+%%% Work experience
+%%% ------------------------------------------------------------
+\NewPart{Work experience}{}
 
-  \textbf{President and Founder of Brock Chess Club} \hfill Jan - Apr 2010 \\
-    {\sl Math Help Centre, Brock University}
+% TODO:
+% - limit to top 3 jobs
+% - include numbers
+% - do not exceed 1-2 pages
+% - remove unused shit
+% - put contact info in slogan?
 
-  \textbf{Brock CS Recruiter at Ontario Universities' Fair} \hfill Sep 2009 \\
-    {\sl Metro Toronto Convention Centre, Toronto}
+\WorkEntry{Systems Analyst (Co-op)}{May 2010 - Dec 2010}
+{Ministry of Transportation of Ontario, Ontario, Canada}
+{
+ \begin{itemize} \itemsep -1pt
+   \item Effectively collaborated with supervisors, co-workers, and
+   consultants to migrate the old ministry-wide intranet site to a new
+   site that we designed, built, and maintained.
+   \item Contributed to 6+ major projects over 8 months.
+   Tasks ranged from interviewing project managers, to code refactoring,
+   to business architecture and writing UML documentation.
+   %• MTO Intranet Migration Project
+   %• Training Management System
+   %• Major Applications Portfolio Strategy
+   %• eLearning Project
+   %• Security eForm
+   %• Green IT Initiative
+ \end{itemize}
+ \textbf{Tools used:} Microsoft Sharepoint, JavaScript, jQuery, HTML, CSS, UML
+} % Detailed MTO work experience: http://goo.gl/IQ2Uc
+\sepspace
 
-  \textbf{Executive of Brock Computer Science Club} \hfill Sep 2009 - Present \\
-    {\sl Brock Chapter of the ACM, Brock University (See brockcsc.ca)}
+\EducationEntry{Data Specialist (Co-op)}{Jan 2009 - Apr 2009}
+{GenieKnows Inc., Nova Scotia, Canada}
+{
+ \begin{itemize} \itemsep -1pt
+   \item Enhanced business data for results used to provide the search
+   and mapping features of GenieKnows Local Search (now yellowee.com)
+   through Automated Data Collection.
+   \item Researched specialized crawling strategies and presented findings
+   to R\&D team. Utilizing the knowledge, built specialized web crawlers
+   for sites on the Surface Web and Deep Web.
+   %\item % Daily duties included: identifying data requirements, researching data sources, automating the downloading and processing/formatting of data, evaluating data quality, writing technical documentation, logging bugs, and logging progress.
+ \end{itemize}
+ \textbf{Tools used:} Linux shell scripting (bash), Ruby, Watir, Selenium, Trac, Subversion (SVN)
+}
 
-%  \textbf{Volunteer at Co-op Orientation} \hfill Sep 2009 \\
-%    {\sl Co-op Office, Brock University}
+%%% Organizations
+%%% ------------------------------------------------------------
+\NewPart{Organizations}{}
 
-  \textbf{Co-founder and Administrator of BrockBots} \hfill Mar 2009 - Sep 2010 \\
-    {\sl Formerly a CS messageboard at www.brockbots.cosc.brocku.ca}
-    
-%  \textbf{Member of Computer Science Club} \hfill Sep 2007 - Present \\
-%    {\sl Brock Chapter of the ACM, Brock University}
+\OrganizationEntry{Contributor}{2012-present}
+{Software Niagara, \url{softwareniagara.com}}
+{
+ \begin{itemize} \itemsep -1pt
+   \item Grassroots organization which aims to improve the Niagara Region tech scene 
+   \item Organize social and informative events, such as DemoCamp and Software Coworking
+   \item Built \url{voteinpublic.com} with the team as a weekend project and demoed at DemoCamp
+ \end{itemize}
+}
+\sepspace
 
-  \textbf{Elected Residence Action Council Member} \hfill Sep 2007 - Apr 2008 \\
-    {\sl Quarry View Residence, Brock University}
- 
-%\section{ADDITIONAL} % \\QUALIFICATIONS}
-%  \begin{itemize}
-%    \item Bilingual (English \& Dutch)
-%    \item Comfortable being a de-facto team leader across disciplines
-%    \item Keen eye for detail and elegant user interface design
-%  \end{itemize}
+\OrganizationEntry{Contributor \& Mentor}{2011-present}
+{Freeseer, Free and Open Source Software Learning Centre}
+{
+ \begin{itemize} \itemsep -1pt % Reduce space between items.
+   \item Freeseer is a free and open source solution for capturing presentations
+   \item Wrote and maintain Freeseer's comprehensive documentation
+ % Dutch translation, new home page, new readme, wikipedia article, online docs
+   \item Collaborate using agile and open source processes in a distributed environment
+   \item Mentor interns from Google Summer of Code (GSoC) and Undergraduate Capstone Open Source Programs (UCOSP)
+ \end{itemize}
+}
+\sepspace
 
-% Don't include 'References available upon request'. That's obvious and a waste of space.
-\end{resume}
+\OrganizationEntry{Creator \& Moderator}{2011-present}
+{Brock University Subreddit, \url{brocku.reddit.com}}
+{
+ \begin{itemize} \itemsep -1pt
+   \item Online discussion board for topics related to BrockU
+   \item Actively contribute to the board and organize meetups
+   \item Executed marketing campaigns that grew the board to 300+ members
+ \end{itemize}
+}
+\sepspace
+
+\OrganizationEntry{Executive}{2009-present}
+{Computer Science Club (ACM Student Chapter), Brock University}
+{
+ \begin{itemize} \itemsep -1pt
+   \item Created the Brock CSC organization on GitHub which has 6 repositories and 10 members:
+\url{github.com/brockcsc}
+   \item Help organize and market social and academic events
+   \item Arrange ACM ICPC tryouts and coach resulting teams
+ \end{itemize}
+}
+
+%%% Skills
+%%% ------------------------------------------------------------
+\NewPart{Skills}{}
+
+\SkillsEntry{Software}{Python, \textsc{C/C++}, Java, Prolog, Bash,
+JavaScript, Git, GitHub,}
+\SkillsEntry{}{Vim, Chrome, GNU/Linux, Android, SQL, \LaTeX, IRC}
+\sepspace
+\SkillsEntry{Languages}{Dutch (intermediate)}
+
+%%% Awards -- quick hack, should be improved in macro section
+%%% ------------------------------------------------------------
+\NewPart{Awards}{}
+
+\AwardsEntry{Competition}{$\bullet$ Facebook Hacker Cup, Online Round 1 Qualifier, 2013}
+\AwardsEntry{}{$\bullet$ ACM International Collegiate Programming Contest (ACM ICPC)}
+\AwardsEntry{}{\hspace{5pt} Honorable Mention, 2008-2012}
+\AwardsEntry{}{$\bullet$ CS Games, Top 10, 2010-2011}
+\AwardsEntry{}{$\bullet$ Great Canadian Appathon, Top 25, 2010}
+\sepspace
+\AwardsEntry{Academic}{$\bullet$ Deans' Honours List, Brock University, 2011}
+\AwardsEntry{}{$\bullet$ Residence Action Council Member of the Year,}
+\AwardsEntry{}{\hspace{5pt} Quarry View Residence, Brock University, 2008}
+
+%%% References
+%%% ------------------------------------------------------------
+\NewPart{References}{}
+Available upon request
 \end{document}
