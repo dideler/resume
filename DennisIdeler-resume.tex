@@ -11,12 +11,20 @@
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[protrusion=true,expansion=true]{microtype}
-\usepackage{amsmath,amsfonts,amsthm}     % Math packages
-\usepackage{graphicx}                    % Enable pdflatex
-\usepackage[svgnames]{xcolor}            % Colors by their 'svgnames'
+\usepackage{amsmath,amsfonts,amsthm}  % Math packages
+\usepackage{graphicx}  % Enable pdflatex
+\usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
 \usepackage{geometry}
-	\textheight=700px                    % Saving trees ;-)
+	\textheight=700px  % Saving trees ;-)
 \usepackage{url}
+
+%% Define a new 'modern' style for the url package that will use a smaller font.
+\makeatletter
+\def\url@modernstyle{
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small}}}
+\makeatother
+%% Now actually use the newly defined style.
+\urlstyle{modern}
 
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
@@ -231,7 +239,7 @@
  \end{itemize}
 }
 
-%%% Skills
+%%% Skills - TODO: try putting in {\small text goes here}
 %%% ------------------------------------------------------------
 \NewPart{Skills}{}
 
