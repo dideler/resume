@@ -21,7 +21,7 @@
 %% Define a new 'modern' style for the url package that will use a smaller font.
 \makeatletter
 \def\url@modernstyle{
-  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small}}}
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{}}}
 \makeatother
 %% Now actually use the newly defined style.
 \urlstyle{modern}
