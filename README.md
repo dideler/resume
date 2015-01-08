@@ -1,7 +1,9 @@
-I only update my résumé when I have to send it out, so if you're lurking, you're
-better off reading [my LinkedIn profile](http://www.linkedin.com/in/dennisideler).
+I don't update my résumé often. If my résumé isn't up to date, try
+[my LinkedIn profile](http://www.linkedin.com/in/dennisideler).
 
-I quickly get bored of my résumés and completely redo them.
-You can view my previous résumé in the `old-resume` branch.
+You can produce the PDF with the command `pdflatex`.  
+Or try a LaTeX IDE like [Texmaker] or [Overleaf]
+(previously writeLaTeX).
 
-I use `pdflatex` to produce the PDF.
+[Texmaker]: http://www.xm1math.net/texmaker/
+[Overleaf]: https://www.overleaf.com/
