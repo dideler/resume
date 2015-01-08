@@ -1,14 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% LaTeX Template: Curriculum Vitae
-%
-% Source: http://www.howtotex.com/
-% Feel free to distribute this template, but please keep the referal to HowToTeX.com.
-% Date: July 2011
-% 
-% Modified by Dennis Ideler
+% My resume format is based on the LaTeX Template "Curriculum Vitae"
+% by HowToTeX.com, though I've made some alterations to the style.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
-							
+
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[protrusion=true,expansion=true]{microtype}
@@ -16,7 +11,7 @@
 \usepackage{graphicx}  % Enable pdflatex
 \usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
 \usepackage{geometry}
-	\textheight=700px  % Saving trees ;-)
+  \textheight=700px  % Saving trees ;-)
 \usepackage{url}
 
 %% Define a new 'modern' style for the url package that will use a smaller font.
@@ -36,76 +31,76 @@
 %%% ------------------------------------------------------------
 \usepackage{sectsty}
 
-\sectionfont{%			            % Change font of \section command
-	\usefont{OT1}{phv}{b}{n}%		% bch-b-n: CharterBT-Bold font
-	\sectionrule{0pt}{0pt}{-5pt}{3pt}}
+\sectionfont{%                  % Change font of \section command
+  \usefont{OT1}{phv}{b}{n}%   % bch-b-n: CharterBT-Bold font
+  \sectionrule{0pt}{0pt}{-5pt}{3pt}}
 
 %%% Macros
 %%% ------------------------------------------------------------
 \newlength{\spacebox}
-\settowidth{\spacebox}{8888888888}			% Box to align text
-\newcommand{\sepspace}{\vspace*{1em}}		% Vertical space macro
+\settowidth{\spacebox}{8888888888}      % Box to align text
+\newcommand{\sepspace}{\vspace*{1em}}   % Vertical space macro
 
 \newcommand{\MyName}[1]{ % Name
-		\Huge \usefont{OT1}{phv}{b}{n} \hfill #1
-		\par \normalsize \normalfont}
-		
+    \Huge \usefont{OT1}{phv}{b}{n} \hfill #1
+    \par \normalsize \normalfont}
+
 \newcommand{\MySlogan}[1]{ % Slogan (optional)
-		\large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
-		\par \normalsize \normalfont}
+    \large \usefont{OT1}{phv}{m}{n}\hfill \textit{#1}
+    \par \normalsize \normalfont}
 
 \newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
 
 \newcommand{\PersonalEntry}[2]{
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}		       % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                      % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
 
-\newcommand{\SkillsEntry}[2]{      % Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value	
+\newcommand{\SkillsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
 
-\newcommand{\AwardsEntry}[2]{      % Same as \PersonalEntry
-		\noindent\hangindent=2em\hangafter=0 % Indentation
-		\parbox{\spacebox}{        % Box to align text
-		\textit{#1}}			   % Entry name (birth, address, etc.)
-		\hspace{1.5em} #2 \par}    % Entry value
+\newcommand{\AwardsEntry}[2]{                % Same as \PersonalEntry
+    \noindent\hangindent=2em\hangafter=0 % Indentation
+    \parbox{\spacebox}{                  % Box to align text
+    \textit{#1}}                    % Entry name (birth, address, etc.)
+    \hspace{1.5em} #2 \par}              % Entry value
 
 \newcommand{\EducationEntry}[4]{
-		\noindent \textbf{#1} \hfill      % Study
-		\colorbox{Black}{%
-			\parbox{8.5em}{%
-			\hfill\color{White}#2}} \par  % Duration
-		\noindent \textit{#3} \par        % School
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
+    \noindent \textbf{#1} \hfill      % Study
+    \colorbox{Black}{
+      \parbox{8.5em}{
+      \hfill\color{White}#2}} \par  % Duration
+    \noindent \textit{#3} \par        % School
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
 
-\newcommand{\WorkEntry}[4]{				  % Same as \EducationEntry
-		\noindent \textbf{#1} \hfill      % Jobname
-		\colorbox{Black}{%
-			\parbox{9em}{%
-			\hfill\color{White}#2}} \par  % Duration
+\newcommand{\WorkEntry}[4]{       % Same as \EducationEntry
+    \noindent \textbf{#1} \hfill      % Jobname
+    \colorbox{Black}{%
+      \parbox{9em}{%
+      \hfill\color{White}#2}} \par   % Duration
         \noindent \textit{#3} \par        % Company
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
 
-\newcommand{\OrganizationEntry}[4]{		  % Similar to \EducationEntry
-		\noindent \textbf{#1} \hfill      % Jobname
-		\colorbox{Black}{\color{White}#2} \par  % Duration
-		\noindent \textit{#3} \par              % Company
-		\noindent\hangindent=2em\hangafter=0 \small #4 % Description
-		\normalsize \par}
+\newcommand{\OrganizationEntry}[4]{         % Similar to \EducationEntry
+    \noindent \textbf{#1} \hfill            % Jobname
+    \colorbox{Black}{\color{White}#2} \par  % Duration
+    \noindent \textit{#3} \par              % Company
+    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
+    \normalsize \par}
 
 %%% Begin Document
 %%% ------------------------------------------------------------
 \begin{document}
 % you can upload a photo and include it here...
 %\begin{wrapfigure}{l}{0.5\textwidth}
-%	\vspace*{-2em}
-%		\includegraphics[width=0.15\textwidth]{photo}
+% \vspace*{-2em}
+%   \includegraphics[width=0.15\textwidth]{photo}
 %\end{wrapfigure}
 
 \MyName{Dennis Ideler}
@@ -151,14 +146,85 @@
 \NewPart{Work experience}{}
 
 % NOTE:
-% - limit to top 3 jobs
-% - make the results measurable somehow (i.e. include numbers)
-% - preferably 1 page, do not exceed 2 pages!
-% - remove skills you're no longer familiar with
-% - show what you did, how you did it, and what the results were
+% - Limit to top 3 jobs
+% - Make the results measurable somehow (i.e. include numbers)
+% - Preferably 1 page, do not exceed 2 pages!
+% - Remove skills you're no longer familiar with
+% - Show what you did, how you did it, and what the results were
 %   e.g. "accomplished x by implementing y which led to z"
-% - try to keep info recent to ~5 years
-% - put contact info in slogan?
+% - Try to keep info recent to ~5 years
+% - Difficulty expressing accomplishments? Try the following words
+%   Achieved, Improved, Trained/mentored, Managed, Created, Resolved,
+%   Volunteered, Influenced, Increased/decreased, Ideas, Negotiated,
+%   Launched, Revenue/profits, Under budget, Won
+
+\WorkEntry{Consultant (Remote)}{Sep 2014 - present}
+{Landlord Web Solutions, Ontario, Canada}
+{
+ \begin{itemize} \itemsep -1pt
+   \item Continued development of metrics system for apartment industry
+   % Working on lead tracking phase (future phases are metrics, then analytics)
+ \end{itemize}
+ \textbf{Tools used:} Ruby, Rails, RSpec, PostgreSQL, Git, GitHub, Heroku, Mailgun, Python
+}
+\sepspace
+
+\WorkEntry{Software Developer}{Jan 2014 - Jun 2014}
+{Landlord Web Solutions, Ontario, Canada}
+{
+ \begin{itemize} \itemsep -1pt
+   \item Improved effectiveness of marketing by revamping email communications
+   % - researched how to improve open rates and design good emails
+   %   - do a/b testing when unsure
+   %   - send as a person, not a business (sender name, wording, etc)
+   %   - KIS
+   %   - limit the amount of graphics
+   %   - focus on one thing, obvious (and multiple) CTAs for the same action
+   %   - short non-spammy subject
+   %   - optimize for mobile (easy to read, short, responsive, focused)
+   %   - transactional emails have highest click-through rate,
+   %     newsletters have somewhat low CTR,
+   %     promotional emails have very low CTR
+   %   - space out emails; don't send too many emails too often
+   %   - send early in the morning
+   %   - send to "organic" contacts who opted-in
+   % - reviewed marketing emails before they were sent out
+   % - started contributing to reallygoodemails.com/about in my free time
+   % - increase delivery
+   %   - researched how to reduce spam filter blockage
+   %   - our e-blasts were failing spam tests (e.g. mail-tester.com)
+   %   - do not cold email (especially with Canada's new anti-spam legislation)
+   %   - segment email lists so emails are highly targeted (i.e. relevant content)
+   %   - reduce bounce rates (which can hurt senders) by cleaning mailing lists
+   %   - easy unsubscribe (ideally one click)
+   %   - address in footer
+   %   - don't use misleading/deceptive info
+   %     (e.g. links that redirect or point elsewhere, false info, etc.)
+   %   - use a reputable email service provider (ESP)
+   %   - add alt tags to images
+   % - designed and sent with constant contact
+   % Also see https://gist.github.com/dideler/534e5996bbbbfe9e0f59
+   \item Increased usability of products through UX feedback and user testing
+   % - Collected usage videos via http://peek.usertesting.com/ and wrote a report
+   % - Gave UX feedback and suggestions during hands-on meetings
+   \item Trained team on development practices by sharing knowledge and leading by example
+   % - Advocated and/or wrote blog posts about git workflows (e.g. tagging,
+   %   branches), github workflows (e.g. using issues, releases, PRs),
+   %   code review, testing, user testing, etc.
+   % - Helped coworkers with git/github questions
+   % - Wrote and updated documentation for some technical tasks
+   \item Created a CRUD application for managing important aspects of our annual Landlord WEBCON conference, such as ticket sales, invoices, promo codes, and sponsors. Metrics gave key insights for guiding decision making, especially around measuring and boosting ticket sales.
+   % Gain valuable knowledge from metrics.
+   % Key insights that help drive the evolution of the conference.
+   % Used to recommend action or to guide decision making rooted in business context.
+   % Track ticket sales and vacancies and measure our advertising ROI
+   % Measure and boost our impact on Twitter.
+   % Dashboard for an overview and quickly measuring engagement
+   \item Designed and began implementation of a metrics system for the apartment industry
+ \end{itemize}
+ \textbf{Tools used:} Ruby, Rails, MySQL, CoffeeScript, Bootstrap, Git, GitHub, Heroku, Sendgrid
+}
+\sepspace
 
 \WorkEntry{Systems Analyst (Co-op)}{May 2010 - Dec 2010}
 {Ministry of Transportation of Ontario, Ontario, Canada}
@@ -200,13 +266,15 @@
 %%% ------------------------------------------------------------
 \NewPart{Organizations}{}
 
-\OrganizationEntry{Team Member}{2012 - present}
+% TODO: Add OpenHack
+
+\OrganizationEntry{Team Member}{2012 - 2014}
 {Software Niagara, \url{softwareniagara.com}}
 {
  \begin{itemize} \itemsep -1pt
-   \item Grassroots organization which aims to improve the Niagara Region tech scene 
-   \item Organize social and informative events, such as DemoCamps and Software Coworking
-   \item Built \url{voteinpublic.com} with the team as a weekend project and demoed it at DemoCamp
+   \item Grassroots organization which aims to improve the Niagara Region tech scene
+   \item Organize social and informative events, such as DemoCamps, DevTricks, and Coworking
+   \item Built \url{voteinpublic.com} with the team at a hackathon and demoed it at a DemoCamp
  \end{itemize}
 }
 \sepspace
@@ -215,8 +283,8 @@
 {Freeseer, \url{freeseer.github.io}}
 {
  \begin{itemize} \itemsep -1pt % Reduce space between items.
-   \item Freeseer is a free and open source solution for capturing presentations
-   \item Wrote and maintain Freeseer's comprehensive documentation
+   \item Free and open source screencasting software designed for conferences
+   \item Write and maintain Freeseer's comprehensive documentation
    \item Collaborate using agile and open source processes in a distributed team
    \item Mentor student interns from Google Summer of Code (GSoC) and Undergraduate Capstone Open Source Programs (UCOSP)
  \end{itemize}
@@ -228,18 +296,17 @@
 {
  \begin{itemize} \itemsep -1pt
    \item Online discussion board for topics related to BrockU
-   \item Actively contribute to the board and organize meetups
+   \item Increased user engagement by contributing to the board and organizing meetups
    \item Executed marketing campaigns that grew the board to 300+ members
  \end{itemize}
 }
 \sepspace
 
 \OrganizationEntry{Executive}{2009 - 2013}
-{Computer Science Club (ACM Student Chapter), Brock University}
+{Computer Science Club, Brock University, \url{github.com/brockcsc}}
 {
  \begin{itemize} \itemsep -1pt
-   \item Created the Brock CSC organization on GitHub which has 5+ repositories and 10+ members:
-\url{github.com/brockcsc}
+   \item Created the Brock CSC organization on GitHub which has 5+ repositories and 10+ members
    \item Helped organize and market social and academic events
    \item Prepared ACM ICPC teams through tryouts and coaching (\url{github.com/brockcsc/acm-icpc})
  \end{itemize}
@@ -263,9 +330,8 @@
 \NewPart{Skills}{}
 
 %% When running low on space, consider using {\small text goes here} for skills
-\SkillsEntry{Software}{Python, C++, C, Java, Prolog, Bash,
-JavaScript, Git, GitHub,}
-\SkillsEntry{}{Vim, Chrome, GNU/Linux, Android, SQL, \LaTeX, IRC}
+\SkillsEntry{Software}{Ruby, Ruby on Rails, Python, C++, Java, JavaScript, Git, GitHub,}
+\SkillsEntry{}{Shell Scripting (Bash, Fish), Vim, Linux, Android, SQL, \LaTeX, IRC}
 \sepspace
 \SkillsEntry{Languages}{Dutch (intermediate)}
 
