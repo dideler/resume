@@ -1,8 +1,6 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% My resume format is based on the LaTeX Template "Curriculum Vitae"
-% by HowToTeX.com, though I've made some alterations to the style.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% http://www.howtotex.com/general/a-guide-to-building-a-plain-and-simple-latex-cv/
 \documentclass[paper=a4,fontsize=11pt]{scrartcl} % KOMA-article class
+% \documentclass[a4paper,11pt]{article}
 
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
@@ -11,14 +9,15 @@
 \usepackage{geometry}
   \textheight=700px
 \usepackage{url}
+\usepackage{lmodern} % Allow arbitrary font sizes
+\usepackage{textcomp}
 
 %% Define a new 'modern' style for the url package that will use a smaller font.
 \makeatletter
 \def\url@modernstyle{
   \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{}}}
 \makeatother
-%% Now actually use the newly defined style.
-\urlstyle{modern}
+\urlstyle{modern} %% And use the newly defined style.
 
 \frenchspacing              % Better looking spacings after periods
 \pagestyle{empty}           % No pagenumbers/headers/footers
@@ -29,7 +28,7 @@
 %%% ------------------------------------------------------------
 \usepackage{sectsty}
 
-\sectionfont{%                  % Change font of \section command
+\sectionfont{                 % Change font of \section command
   \usefont{OT1}{phv}{b}{n}%   % bch-b-n: CharterBT-Bold font
   \sectionrule{0pt}{0pt}{-5pt}{3pt}}
 
@@ -131,14 +130,25 @@
 %   Volunteered, Influenced, Increased/decreased, Ideas, Negotiated,
 %   Launched, Revenue/profits, Under budget, Won
 
-\WorkEntry{Software Engineer}{Feb 2015 - present}
+\WorkEntry{Software Engineer}{Feb 2015 - Present}
 {Funding Circle, London, UK}
 {
  \begin{itemize} \itemsep -1pt
-   \item Utilising agile and extreme programming techniques to continuously deliver reliable software,
-   with a focus on compliance and making the engineering team more effective.
+   \item Utilising extreme programming techniques to continuously deliver reliable software
+   \item Built tooling to make the engineering team more effective
+   \item Focus on strengthening business operations to comply with financial conduct regulations.
+         Built an open source regulatory compliance tool, Shipment Tracker,
+         to capture an audit trail and improve communication within tech team.
+   % We have high standards as a financial services company and have to comply with strict regulations in the interest of our customers.
+   % ST US roll out, alerting
+   % Fixed production issues on ProdOps
+   % Dockerising current stack for testing
+         % Automated integration builds after each merge to master
+         % AWS UATs running dockerised stack
+         % Build statuses on monitors
+   % Client money reconciliation
  \end{itemize}
- \textbf{Tools:} Ruby, Rails, RSpec, Cucumber, PostgreSQL, Git, GitHub, Capistrano, Jenkins, JIRA
+ \textbf{Tools:} Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS
 }
 \sepspace
 
@@ -157,6 +167,7 @@
 {Landlord Web Solutions, Ontario, Canada}
 {
  \begin{itemize} \itemsep -1pt
+   \item Lead developer on a project for tracking metrics in the apartment rental industry
    \item Trained team on good development, email, and UX practices
    % - Goto person for git/github questions and wrote internal blog posts about git (tagging and branching),
    %   GitHub workflows (e.g. using issues, releases, PRs), code review, testing, and user testing
@@ -164,16 +175,10 @@
    % - Collected usage videos via http://peek.usertesting.com/ and wrote a report and gave hands-on feedback
    % - Improved effectiveness of marketing by revamping email communications
    %   See https://gist.github.com/dideler/534e5996bbbbfe9e0f59
-   \item Created a CRUD application for managing important aspects of our annual Landlord WEBCON conference,
-         such as ticket sales, invoices, promo codes, and sponsors. Metrics gave key insights for guiding
-         decision making, especially around measuring and boosting ticket sales.
-   % - Gain valuable knowledge from metrics.
-   % - Key insights that help drive the evolution of the conference.
-   % - Used to recommend action or to guide decision making rooted in business context.
-   % - Track ticket sales and vacancies and measure our advertising ROI.
-   % - Measure and boost our impact on Twitter.
-   % - Dashboard for an overview and quickly measuring engagement
-   \item Lead developer on a project for tracking metrics in the apartment rental industry
+   \item Crafted a content management system for our annual Landlord WEBCON conference.
+         Admins could search and manage ticket sales/vacancies, invoices, promo codes, and sponsors.
+         Metrics gave key insights for boosting ticket sales and measuring ROI.
+   % - Dashboard gave overview of stats for quickly measuring engagement
  \end{itemize}
  \textbf{Tools:} Ruby, Rails, MySQL, CoffeeScript, Bootstrap, Git, GitHub, Heroku, Sendgrid
 }
@@ -183,12 +188,12 @@
 {Ministry of Transportation of Ontario, Ontario, Canada}
 {
  \begin{itemize} \itemsep -1pt
-   \item Effectively collaborated with supervisors, co-workers, and
-   consultants to migrate the old ministry-wide intranet site to a new
-   SharePoint site that we designed, built, and maintained.
-   \item Contributed to 6+ major projects over 8 months.
-   Tasks ranged from interviewing project managers, to code refactoring,
-   to business architecture and writing UML documentation.
+   \item Collaborated effectively with supervisors, co-workers, and consultants
+         to migrate the legacy ministry-wide intranet site to a new
+         SharePoint site that we designed, built, and maintained.
+   \item Contributed to 6 major projects over 8 months.
+         Tasks ranged from interviewing project managers, to code refactoring,
+         to business architecture and writing UML documentation.
    %• MTO Intranet Migration Project
    %• Training Management System
    %• Major Applications Portfolio Strategy
@@ -204,12 +209,12 @@
 {GenieKnows Inc., Nova Scotia, Canada}
 {
  \begin{itemize} \itemsep -1pt
-   \item Enhanced business data for results used to provide the search
-   and mapping features of GenieKnows Local Search (now yellowee.com)
-   through Automated Data Collection.
-   \item Researched specialized crawling strategies and presented findings
-   to R\&D team. Utilizing the knowledge, built specialized web crawlers
-   for sites on the Surface Web and Deep Web.
+   \item Enhanced business data for results used to provide the search and
+         mapping features of GenieKnows Local Search (now yellowee.com)
+         through Automated Data Collection.
+   \item Researched specialized crawling strategies and presented findings to
+         R\&D team. Utilized the knowledge to build specialized web
+         crawlers for content on the Surface Web and Deep Web.
    %\item % Daily duties included: identifying data requirements, researching data sources, automating the downloading and processing/formatting of data, evaluating data quality, writing technical documentation, logging bugs, and logging progress.
  \end{itemize}
  \textbf{Tools:} Linux shell scripting (bash), Ruby, Watir, Selenium, Trac, Subversion (SVN)
