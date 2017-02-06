@@ -134,12 +134,20 @@
 {Funding Circle, London, UK}
 {
  \begin{itemize} \itemsep -1pt
+   \item Increased borrower conversions by programmatically prioritising leads for Sales team
+   % Huge team effort: borrower efficiency team, borrower team, risk team, salesforce team, sales team.
+   % Risk team built statistical model. Borrower team built platform to run model and propagate data.
+   % Salesforce team defined Salesforce endpoints and worked closely with Sales team to prepare them.
+   % Results would end up in Salesforce. Complex data flow as some communication synchronous and much
+   % of it asynchronous across many apps (message topics sometimes defined dynamically).
+   % Messages validated with Avro schemas. Our work consisted of defining new data points, modifying APIs, propagating and validating data.
    \item Delivered reliable software using Extreme Programming (XP) practices adopted from Pivotal % http://c2.com/cgi/wiki?ExtremeProgramming
-   \item Built tooling to make the engineering team more effective, such as dockerising current stack
-   \item Built various tools to strengthen business operations and comply with financial conduct regulations.
-         Such as the open source Shipment Tracker, % https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/
-         to capture audit trails and improve visibility of releasing software. And a data warehouse built on
-         AWS services for daily reconciliation tasks.
+   \item Increased engineering efficiency by building internal tooling to improve continuous delivery pipeline,
+         such as dockerising stack, stabilising test suite, and monitoring software releases
+   \item Built tools to strengthen business operations and comply with financial conduct regulations.
+         Such as the open source Shipment Tracker % https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/
+         to capture audit trails and improve visibility of releasing software,
+         and a data warehouse for daily reconciliation and reporting tasks.
    % We have high standards as a financial services company and have to comply with strict regulations in the interest of our customers.
    % ST US roll out, alerting
    % Fixed production issues on ProdOps
@@ -150,7 +158,7 @@
    % Client money reconciliation
    % Borrower efficiency (assisting borrower team, salesforce team, and risk team)
  \end{itemize}
- \textbf{Tools:} Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS
+ \textbf{Tools:} Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS, RabbitMQ
 }
 \sepspace
 
