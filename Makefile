@@ -5,25 +5,28 @@ tlmgr := /Library/TeX/texbin/tlmgr
 resume_pkgs := ucs sectsty helvetic
 letter_pkgs := enumitem xifthen ifmtarg fontspec fontawesome sourcesanspro tcolorbox environ trimspaces
 
-
-.PHONY: watch_resume
-watch_resume:
-	@watcher -cmd="xargs $(pdflatex) -interaction=nonstopmode" -keepalive -pipe=true *resume.tex
-
-.PHONY: watch_letter
-watch_letter:
-	@watcher -cmd="xargs $(xelatex) -interaction=nonstopmode" -keepalive -pipe=true *letter.tex
+.PHONY: help
+help:
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: build_resume
-build_resume:
+build_resume: ## Build resume PDF
 	$(pdflatex) *resume.tex
 
 .PHONY: build_letter
-build_letter:
+build_letter: ## Build letter PDF
 	$(xelatex) letter.tex
 
+.PHONY: watch_resume
+watch_resume: ## Rebuild resume on changes
+	@watcher -cmd="xargs $(pdflatex) -interaction=nonstopmode" -keepalive -pipe=true *resume.tex
+
+.PHONY: watch_letter
+watch_letter: ## Rebuild letter on changes
+	@watcher -cmd="xargs $(xelatex) -interaction=nonstopmode" -keepalive -pipe=true *letter.tex
+
 .PHONY: versions
-versions:
+versions: ## Show installed versions of dependencies
 	$(pdflatex) -version
 	@printf "\n"
 	$(xelatex) -version
@@ -31,7 +34,7 @@ versions:
 	watcher -version
 
 .PHONY: install
-install: get_basictex get_latex_pkgs get_watcher
+install: get_basictex get_latex_pkgs get_watcher ## Install dependencies
 
 .PHONY: get_watcher
 get_watcher:
