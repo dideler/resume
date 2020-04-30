@@ -10,23 +10,23 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 .PHONY: build_resume
-build_resume: ## Build resume PDF
+build_resume: ## Builds resume PDF
 	$(pdflatex) *resume.tex
 
 .PHONY: build_letter
-build_letter: ## Build letter PDF
+build_letter: ## Builds letter PDF
 	$(xelatex) letter.tex
 
 .PHONY: watch_resume
-watch_resume: ## Rebuild resume on changes
+watch_resume: ## Rebuilds resume on changes
 	@watcher -cmd="xargs $(pdflatex) -interaction=nonstopmode" -keepalive -pipe=true *resume.tex
 
 .PHONY: watch_letter
-watch_letter: ## Rebuild letter on changes
+watch_letter: ## Rebuilds letter on changes
 	@watcher -cmd="xargs $(xelatex) -interaction=nonstopmode" -keepalive -pipe=true *letter.tex
 
 .PHONY: versions
-versions: ## Show installed versions of dependencies
+versions: ## Shows installed versions of dependencies
 	$(pdflatex) -version
 	@printf "\n"
 	$(xelatex) -version
@@ -34,7 +34,7 @@ versions: ## Show installed versions of dependencies
 	watcher -version
 
 .PHONY: install
-install: get_basictex get_latex_pkgs get_watcher ## Install dependencies
+install: get_basictex get_latex_pkgs get_watcher ## Installs dependencies
 
 .PHONY: get_watcher
 get_watcher:
@@ -59,7 +59,7 @@ get_letter_latex_pkgs:
 	@sudo $(tlmgr) install $(letter_pkgs)
 
 .PHONY: uninstall
-uninstall: uninstall_watcher uninstall_latex_pkgs uninstall_basictex ## Uninstall dependencies (!)
+uninstall: uninstall_watcher uninstall_latex_pkgs uninstall_basictex ## Uninstalls dependencies (!)
 
 .PHONY: uninstall_basictex
 uninstall_basictex:
