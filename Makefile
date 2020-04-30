@@ -1,7 +1,7 @@
 pdflatex := /Library/TeX/texbin/pdflatex
 tlmgr := /Library/TeX/texbin/tlmgr
 
-resume_pkgs := ucs sectsty helvetic # times rsfs cm-super collection-latexrecommended texlive-scripts
+resume_pkgs := ucs sectsty helvetic
 
 .PHONY: watch
 watch:
