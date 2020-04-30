@@ -79,3 +79,7 @@ uninstall_resume_pkgs:
 .PHONY: uninstall_letter_pkgs
 uninstall_letter_pkgs:
 	@sudo $(tlmgr) uninstall $(letter_pkgs)
+
+.PHONY: clean
+clean: ## Cleans generated files
+	rm *.aux *.log
