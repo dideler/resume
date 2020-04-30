@@ -59,11 +59,15 @@ get_letter_latex_pkgs:
 	@sudo $(tlmgr) install $(letter_pkgs)
 
 .PHONY: uninstall
-uninstall: uninstall_latex_pkgs uninstall_basictex
+uninstall: uninstall_watcher uninstall_latex_pkgs uninstall_basictex ## Uninstall dependencies (!)
 
 .PHONY: uninstall_basictex
 uninstall_basictex:
 	@brew cask uninstall basictex
+
+.PHONY: uninstall_watcher
+uninstall_watcher:
+	@test -f ~/bin/watcher && rm ~/bin/watcher
 
 .PHONY: uninstall_latex_pkgs
 uninstall_latex_pkgs: uninstall_resume_pkgs uninstall_letter_pkgs
