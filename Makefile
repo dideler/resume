@@ -82,4 +82,4 @@ uninstall_letter_pkgs:
 
 .PHONY: clean
 clean: ## Cleans generated files
-	rm *.aux *.log
+	rm *.pdf *.aux *.log
