@@ -741,7 +741,7 @@
   \vspace{3.4mm}
   \lettertextstyle{\@letterclosing} \\
   \includegraphics[scale=0.4]{signature} \\
-  \letternamestyle{\@firstname\ \@lastname}
+  %\letternamestyle{\@firstname\ \@lastname} % TODO: Bring back along with position once doc title changes to company name
   \ifthenelse{\isundefined{\@letterenclosure}}
     {\\}
     {%
