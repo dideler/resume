@@ -66,6 +66,11 @@ update_latex_pkgs:
 	@sudo $(tlmgr) update --list
 	@sudo $(tlmgr) update --self --all
 
+.PHONY: search_latex_pkgs
+search_latex_pkgs:
+	@sudo $(tlmgr) info --list $(ARGS)
+	@sudo $(tlmgr) search --global --file $(ARGS)
+
 .PHONY: uninstall
 uninstall: uninstall_watcher uninstall_latex_pkgs uninstall_basictex ## Uninstalls dependencies (!)
 
