@@ -18,6 +18,13 @@
   citecolor   = red   % Colour of citations
 ]{hyperref} % Clickable hyperlinks
 
+%% Capture environment variables into a control sequence. Only works with pdflatex.
+%% Usage: \getenv[\HOME]{HOME}
+\usepackage{catchfile}
+\newcommand{\getenv}[2][]{%
+  \CatchFileEdef{\temp}{"|kpsewhich --var-value #2"}{\endlinechar=-1}%
+  \if\relax\detokenize{#1}\relax\temp\else\let#1\temp\fi}
+
 %% Define a new 'modern' style for the url package that will use a smaller font.
 \makeatletter
 \def\url@modernstyle{
