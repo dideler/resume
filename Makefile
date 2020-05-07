@@ -16,6 +16,10 @@ build: build_resume build_letter ## Builds resume and letter PDF
 build_resume: ## Builds resume PDF
 	$(pdflatex) *resume.tex
 
+.PHONY: build_cv
+build_cv: ## Builds curriculum vitae PDF
+	env CV=true $(pdflatex) -jobname=cv *resume.tex
+
 .PHONY: build_letter
 build_letter: ## Builds letter PDF
 	$(xelatex) letter.tex
@@ -23,6 +27,10 @@ build_letter: ## Builds letter PDF
 .PHONY: watch_resume
 watch_resume: ## Rebuilds resume on changes
 	@watcher -cmd="xargs $(pdflatex) -interaction=nonstopmode" -keepalive -pipe=true *resume.tex
+
+.PHONY: watch_cv
+watch_cv: ## Rebuilds curriculum vitae on changes
+	@watcher -cmd="xargs env CV=true $(pdflatex) -jobname=cv -interaction=nonstopmode" -keepalive -pipe=true *resume.tex
 
 .PHONY: watch_letter
 watch_letter: ## Rebuilds letter on changes
