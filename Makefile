@@ -61,6 +61,11 @@ get_resume_latex_pkgs:
 get_letter_latex_pkgs:
 	@sudo $(tlmgr) install $(letter_pkgs)
 
+.PHONY: update_latex_pkgs
+update_latex_pkgs:
+	@sudo $(tlmgr) update --list
+	@sudo $(tlmgr) update --self --all
+
 .PHONY: uninstall
 uninstall: uninstall_watcher uninstall_latex_pkgs uninstall_basictex ## Uninstalls dependencies (!)
 
