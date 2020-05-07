@@ -2,7 +2,7 @@ pdflatex := /Library/TeX/texbin/pdflatex
 xelatex := /Library/TeX/texbin/xelatex
 tlmgr := /Library/TeX/texbin/tlmgr
 
-resume_pkgs := ucs sectsty helvetic catchfile kpathsea
+resume_pkgs := ucs sectsty helvetic catchfile kpathsea etoolbox
 letter_pkgs := enumitem xifthen ifmtarg fontspec fontawesome sourcesanspro tcolorbox environ trimspaces
 
 .PHONY: help
