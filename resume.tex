@@ -183,64 +183,62 @@
 \WorkEntry{Software Engineer}{Feb 2015 - Oct 2016}
 {\href{https://www.fundingcircle.com/}{Funding Circle}, London, UK}
 {
- \begin{itemize} \itemsep -1pt
-   \item Increased borrower conversions by programmatically prioritising leads for Sales team
-   % Huge team effort: borrower efficiency team, borrower team, risk team, salesforce team, sales team.
-   % Risk team built statistical model. Borrower team built platform to run model and propagate data.
-   % Salesforce team defined Salesforce endpoints and worked closely with Sales team to prepare them.
-   % Results would end up in Salesforce. Complex data flow as some communication synchronous and much
-   % of it asynchronous across many apps (message topics sometimes defined dynamically).
-   % Messages validated with Avro schemas. Our work consisted of defining new data points, modifying APIs, propagating and validating data.
-   \item Delivered reliable software using Extreme Programming (XP) practices adopted from Pivotal % http://c2.com/cgi/wiki?ExtremeProgramming
-   \item Increased engineering efficiency by building internal tooling to improve continuous delivery pipeline,
-         such as dockerising stack, stabilising test suite, and monitoring of software releases
-   \item Built tools to strengthen business operations and comply with financial conduct regulations.
-         Such as the open source Shipment Tracker % https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/
-         to capture audit trails and improve visibility of releasing software,
-         and a data warehouse for daily reconciliation and reporting tasks.
-   % We have high standards as a financial services company and have to comply with strict regulations in the interest of our customers.
-   % ST US roll out, alerting
-   % Fixed production issues on ProdOps
-   % Dockerising current stack for testing
-         % Automated integration builds after each merge to master
-         % AWS UATs running dockerised stack
-         % Build statuses on monitors
-   % Client money reconciliation
-   % Borrower efficiency (assisting borrower team, salesforce team, and risk team)
- \end{itemize}
- \textbf{Tools:} Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS, RabbitMQ
+  \begin{itemize} \itemsep -1pt
+    \item Increased borrower conversions by programmatically prioritising leads for Sales team
+    %     Big team effort: borrower efficiency team, borrower team, risk team, salesforce team, sales team.
+    %     Risk team built statistical model. Borrower team built platform to run model and propagate data.
+    %     Salesforce team defined Salesforce endpoints and worked closely with Sales team to prepare them.
+    %     Results would end up in Salesforce. Complex distributed data flow with sync and async comms.
+    %     Messages validated with Avro schemas. Our work consisted of defining new data points, modifying APIs, propagating and validating data.
+    \item Increased engineering efficiency by building internal tooling to improve continuous delivery pipeline,
+          such as dockerising stack, stabilising test suite, and monitoring of software releases
+    \item Built tools to strengthen business operations and comply with financial conduct regulations.
+          Such as the open source \href{https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/}{Shipment Tracker}
+          to capture audit trails and improve visibility of releasing software,
+          and a data warehouse for daily reconciliation and reporting tasks.
+    %     We have high standards as a financial services company and have to comply with strict regulations in the interest of our customers.
+    %     ST US roll out, alerting
+    %     Fixed production issues on ProdOps
+    %     Dockerising current stack for testing
+    %       Automated integration builds after each merge to master
+    %       AWS UATs running dockerised stack
+    %       Build statuses on monitors
+    %     Client money reconciliation
+    %     Borrower efficiency (assisting borrower team, salesforce team, and risk team)
+    \ifCV{
+    \item Delivered reliable software using Extreme Programming (XP) practices adopted from Pivotal % http://c2.com/cgi/wiki?ExtremeProgramming
+    }
+  \end{itemize}
+  \textbf{Tools:} Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS, RabbitMQ
 }
 \sepspace
 
 \WorkEntry{Consultant (Remote)}{Sep 2014 - Feb 2015}
 {\href{https://www.landlordwebsolutions.com/}{Landlord Web Solutions}, Ontario, Canada}
 {
- \begin{itemize} \itemsep -1pt
-   \item Continued development of the metrics system for the apartment rental industry
-   % Worked on lead tracking phase (future phases are metrics, then analytics)
- \end{itemize}
- \textbf{Tools:} Ruby, Rails, RSpec, PostgreSQL, Git, GitHub, Heroku, Mailgun, Python
+  \begin{itemize} \itemsep -1pt
+    \item Lead developer on a project for analytics and metrics in the apartment rental industry % Lead tracking
+  \end{itemize}
+  \textbf{Tools:} Ruby, Rails, RSpec, PostgreSQL, Git, GitHub, Heroku, Mailgun, Python
 }
 \sepspace
 
 \WorkEntry{Software Developer}{Jan 2014 - Jun 2014}
 {\href{https://www.landlordwebsolutions.com/}{Landlord Web Solutions}, Ontario, Canada}
 {
- \begin{itemize} \itemsep -1pt
-   \item Lead developer on a project for tracking metrics in the apartment rental industry
-   \item Trained team on good development, email, and UX practices
-   % - Goto person for git/github questions and wrote internal blog posts about git (tagging and branching),
-   %   GitHub workflows (e.g. using issues, releases, PRs), code review, testing, and user testing
-   % - Wrote and updated internal technical documentation
-   % - Collected usage videos via http://peek.usertesting.com/ and wrote a report and gave hands-on feedback
-   % - Improved effectiveness of marketing by revamping email communications
-   %   See https://gist.github.com/dideler/534e5996bbbbfe9e0f59
-   \item Crafted a content management system for our annual Landlord WEBCON conference.
-         Admins could search and manage ticket sales/vacancies, invoices, promo codes, and sponsors.
-         Metrics gave key insights for boosting ticket sales and measuring ROI.
-   % - Dashboard gave overview of stats for quickly measuring engagement
- \end{itemize}
- \textbf{Tools:} Ruby, Rails, MySQL, CoffeeScript, Bootstrap, Git, GitHub, Heroku, Sendgrid
+  \begin{itemize} \itemsep -1pt
+    \item Developed a content management system for our annual Landlord WEBCON conference
+    %     Admins could search and manage ticket sales/vacancies, invoices, promo codes, and sponsors.
+    %     Metrics gave key insights for boosting ticket sales and measuring ROI.
+    %     Dashboard gave overview of stats for quickly measuring engagement.
+    \item Revamped our development practices and email marketing to increase effectiveness
+    %     Goto person for git/github questions and wrote internal blog posts about git (tagging and branching),
+    %     GitHub workflows (e.g. using issues, releases, PRs), code review, testing, and user testing.
+    %     Wrote and updated internal technical documentation.
+    %     User testing via http://peek.usertesting.com/ and wrote a report and gave hands-on feedback.
+    %     Spam testing of emails, and more, see https://gist.github.com/dideler/534e5996bbbbfe9e0f59
+  \end{itemize}
+  \textbf{Tools:} Ruby, Rails, MySQL, CoffeeScript, Bootstrap, Git, GitHub, Heroku, Sendgrid
 }
 \sepspace
 
