@@ -160,35 +160,102 @@
 {\href{https://rekki.com/}{REKKI}, London, UK}
 {
   \begin{itemize} \itemsep -1pt
-    \item Early backend engineer focused on building team, product, and platform
-    \item Laid foundations for managing release and operational risks
-    %     feature flags, logs, metrics, monitoring, alerting,
-    %     post mortems, error reporting, release notes,
-    %     audit trail for tickets and releases,
-    %     run backend on k8s for no-downtime deploys,
-    %     high delivery rate for orders via email and sms
-    %     (spam detection, sms optimisation, reporting),
-    %     management for cloud + secrets + database
-    %     error alerting and recovery via chat ops,
-    %     secret rotation, tests, data reports and requests,
-    %     automation of manual repetitive tasks (e.g. integration, l11n, reports, ops tasks),
-    %     advocate on security for new and existing flows
-    \item Empowered teams by tackling major technical debt across architecture and data
-    %     implement new data structures for buyers and suppliers
-    %     migrate from couchdb (nosql) to postgres (sql)
-    %     move from http and async amqp apis to centralised db w/ polling and locking
-    \item Enabled data science efforts by building initial data pipeline and delivery platform
-    %     evaluated platforms, built first version on SageMaker,
-    %     wrote core library to manage model loading and persistence, optimised it
-    %     created datascience monorepo and code organisation so it's easily extendable
-    %     introduced dependency and version management for reproducibility
-    %     introduced large file storage to ease pain of working with large models
-    %     built ETL (extract, transform, load) data pipeline with redshift to speed up their work
-    %     and reduce load on production db - but ended up going with a read replica and stronger instance
+    \item Joined during critical Series A stage, focused on scaling business from a technical perspective
+
+    % Tech lead for backend team when contractor tech lead left.
+    % Introduced standups, work against tickets, report to cto & founder.
+    % Built some product, e.g. shared basket, socket endpoints, ...
+    % Optimised ops flows (telegram/slack bots), event notifications, etc.
+    % Make it easier to firefight by throttling critical failure alerts.
+    % Tooling for growth marketing campaigns (event triggers, push notifs w/ custom messaging).
+    % Build ETL data pipeline and warehouse for data science and analytics.
+    % Lots of firefighting and quick fixes to patch problems.
+    % Improve security (e.g. put backend docs behind basic auth).
+    \item In Series B stage, focused on growing our team and capabilities, and managing operational risks
+    %     Operational risk is the prospect of loss resulting from inadequate or
+    %     failed procedures, systems, or policies. E.g. employee errors. systems
+    %     failures, bottlenecks, criminal activity.
+    %     Bsically any event that disrupts business processes.
+    %
+    % - Tech lead for infra team in its early stages
+    %   - Responsible for reporting to the CTO and Founder.
+    %   - Planning team roadmap with leadership teams.
+    %   - Tech team updates at all hands. Helped launch first all hands.
+    %   - Involved in recruitment, hiring, and developer relations.
+    %   - Organised processes for team (e.g. standups, tickets).
+    %   - Go to person for those teams in lieu of a PM/PO (questions, meetings, etc).
+    %   - Accountable for maintaining service-level-agreements (response time, uptime, RFOs).
+    %   - Ensure other engineers can do their jobs without being blocked by technical things.
+    %   - Built better metrics, error tracking, logging, ...
+    %   - Mindshift to data-driven decisions (sockets, couch/ovh, startup times, failure rates)
+    %   - Organised and defined on-call rotas (but didn't get approved)
+    %
+    % - Laid foundations for managing release and operational risks:
+    %   - support internationalisation and localisation,
+    %   - build tech to automate / optimise flows for ops and sales teams
+    %     (e.g. new users onboarding, login auth codes, upload invoices, ...)
+    %   - introduce practice of feature flags, an api, and a platform to manage
+    %   - make troubleshooting easier by adding logs to critical flows
+    %   - fix a ton of bugs (accurate mixpanel tracking was the worst)
+    %   - improve practice of collecting and using metrics (statsd, graphite, grafana)
+    %   - build dashboards for platforms (aws, appsignal, grafana)
+    %   - build alerting on top of our monitoring tools (e.g. aws alerts, grafana alerts),
+    %   - implement rate limiting for endpoints that were being abused
+    %   - move backend to k8s for no downtime deploys, w/ auto-rollbacks
+    %   - improve pipeline for backend, fail fast, show were it failed, etc.
+    %   - lead on firefighting during business hours and lead on post mortems
+    %   - improve error reporting (e.g. reduce costs, improve traces)
+    %   - major upgrade for postgres with minimal downtime
+    %   - write tickets for myself and team
+    %   - release notifications and link to release notes
+    %   - create audit trail for tickets and releases
+    %   - maintain high delivery rate for orders via email and sms
+    %   - spam detection for email (smtp hosts)
+    %   - sms optimisation and cost reduction plus weekly reports
+    %   - onboard new tech hires
+    %   - cloud management: user permissions + network access + secrets + databases
+    %   - improve error alerting and recovery via chat ops,
+    %   - alerting on suspicious data patterns with sensitivy levels adjust for day/night shift
+    %     (e.g. no or low email delivery rate, orders placed, logins, etc),
+    %   - secret rotation and lazy fetching
+    %   - wrote tons of unit and integration tests
+    %   - tons of data reports and requests
+    %   - automation of manual repetitive tasks (e.g. integration, l11n, reports, ops tasks),
+    %   - advocate on security for new and existing flows
+    %   - migrated order flow from elixir to go, and reduced its complexity
+    %
+    % - Enabled new business opportunities by removing major architectural and data debt
+    %   - Implement new data structures for buyers and suppliers.
+    %   - Built internal tool for Ops to migrate SMS suppliers
+    %   - Migrate to a single data store (joinable data); couchdb (nosql) to postgres (sql).
+    %   - Tackle major performance issues for db access (ovh to aws) and backend cpu usage
+    %     (aws t2 instance out of credits due to bug in 3rd party profiling lib).
+    %   - Move from http and async amqp apis to centralised db w/ polling and locking.
+    %   - Built migration tool for Ops to find and migrate SMS-only suppliers.
+    \item Launched data science efforts by building initial data pipeline, processes, and delivery platform
+    %     Put all code and data (data processing, models, noteboooks) under version control.
+    %     Evaluated platforms, built first version on SageMaker.
+    %     Used S3 to backup models.
+    %     Built docker images, web app and APIs to serve models.
+    %     Built model inference for backend to build features on top of models.
+    %     Wrote core library to manage model loading and persistence, optimised it.
+    %     Created datascience monorepo and code organisation so it's easily extendable.
+    %     Introduced dependency and version management for reproducibility.
+    %     Wrote documentation for how to package, load, and deploy datasets and models.
+    %     Introduced large file storage to ease pain of working with large models
+    %     Built ETL (extract, transform, load) data pipeline with redshift (early warehouse).
+    %     Reduced load on production db - read replica. Managed AWS and DB roles and perms.
+    %     Ensured data availability, assisted with data questions and data access.
+    \item Responsible for reliable end-to-end deliverability of orders through various mediums
+    %     Big focus on making SMS more reliable, easier to troubleshoot, and cheaper.
+    %     Built automated recurring reports for SMS (numbers) and email (spam).
+    %     Collect tons of metrics and build dashboards with tons of graphs and alerts.
+    %     Help define and achieve KPIs for deliverability.
+    %     Implement supplier integration HTTP and FTP APIs.
+    %     Help simplify mailer app architecture to make it more reliable and easier to use.
     \ifCV{
     \item Built fully documented internal and public APIs for buyers and suppliers
     \item Managed a core subset of our early cloud infrastructure and roles
-    \item Organised our first all hands and spoke at several on behalf of the tech team
     }
    \end{itemize}
   \textbf{Tools:} Elixir, Ruby, Python, Go, JavaScript, RabbitMQ, PostgreSQL, GitLab, AWS, Docker, K8s
