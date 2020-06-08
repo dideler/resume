@@ -197,6 +197,8 @@
     %   - introduce practice of feature flags, an api, and a platform to manage
     %   - make troubleshooting easier by adding logs to critical flows
     %   - fix a ton of bugs (accurate mixpanel tracking was the worst)
+    %   - service level agreements for infrastructure uptime and comms
+    %   - start a practice of collective post mortems from a timeline and blameless perspective
     %   - improve practice of collecting and using metrics (statsd, graphite, grafana)
     %   - build dashboards for platforms (aws, appsignal, grafana)
     %   - build alerting on top of our monitoring tools (e.g. aws alerts, grafana alerts),
@@ -225,8 +227,10 @@
     %   - migrated order flow from elixir to go, and reduced its complexity
     %
     % - Enabled new business opportunities by removing major architectural and data debt
-    %   - Implement new data structures for buyers and suppliers.
-    %   - Built internal tool for Ops to migrate SMS suppliers
+    %   - Plan and implement new data structures for buyers and suppliers.
+    %   - Rewrite and simplify core flows from legacy stack (elixir) to Go
+    %   - Simplify nodejs mailer architecture
+    %   - Trained other devs (e.g. couchdb migration) via pairing, docs, and workshop meetings
     %   - Migrate to a single data store (joinable data); couchdb (nosql) to postgres (sql).
     %   - Tackle major performance issues for db access (ovh to aws) and backend cpu usage
     %     (aws t2 instance out of credits due to bug in 3rd party profiling lib).
@@ -246,7 +250,11 @@
     %     Built ETL (extract, transform, load) data pipeline with redshift (early warehouse).
     %     Reduced load on production db - read replica. Managed AWS and DB roles and perms.
     %     Ensured data availability, assisted with data questions and data access.
-    \item Responsible for reliable end-to-end deliverability of orders through various mediums
+    \item Led backend and infra teams in their early stages by defining practices, setting goals,
+    being the point person, reporting progress and risks to Founder \& CTO, and defining roadmap and KPIs % L193
+    \item Created business opportunities and enabled teams by tackling major architectural and data debt % L229-238
+    \item Built new product, e.g. invoice uploading, internal APIs for buyer app, public APIs for suppliers
+    \item Responsible for the reliable end-to-end deliverability of orders through various mediums
     %     Big focus on making SMS more reliable, easier to troubleshoot, and cheaper.
     %     Built automated recurring reports for SMS (numbers) and email (spam).
     %     Collect tons of metrics and build dashboards with tons of graphs and alerts.
@@ -254,11 +262,10 @@
     %     Implement supplier integration HTTP and FTP APIs.
     %     Help simplify mailer app architecture to make it more reliable and easier to use.
     \ifCV{
-    \item Built fully documented internal and public APIs for buyers and suppliers
     \item Managed a core subset of our early cloud infrastructure and roles
     }
    \end{itemize}
-  \textbf{Tools:} Elixir, Ruby, Python, Go, JavaScript, RabbitMQ, PostgreSQL, GitLab, AWS, Docker, K8s
+  \textbf{Tools:} Elixir, Ruby, Python, Go, JS, RabbitMQ, PostgreSQL, GitLab, AWS, Docker, K8s, Grafana
 }
 \sepspace
 
@@ -325,6 +332,7 @@
 \WorkEntry{Software Developer}{Jan 2014 - Jun 2014}
 {\href{https://www.landlordwebsolutions.com/}{Landlord Web Solutions}, Ontario, Canada}
 {
+  \ifCV{
   \begin{itemize} \itemsep -1pt
     \item Developed a content management system for our annual Landlord WEBCON conference
     %     Admins could search and manage ticket sales/vacancies, invoices, promo codes, and sponsors.
@@ -338,8 +346,9 @@
     %     Spam testing of emails, and more, see https://gist.github.com/dideler/534e5996bbbbfe9e0f59
   \end{itemize}
   \textbf{Tools:} Ruby, Rails, MySQL, CoffeeScript, Bootstrap, Git, GitHub, Heroku, Sendgrid
+  }
 }
-\sepspace
+\ifCV{\sepspace}
 
 \WorkEntry{Systems Analyst (Co-op)}{May 2010 - Dec 2010}
 {\href{https://www.ontario.ca/page/ministry-transportation}{Ministry of Transportation of Ontario}, Ontario, Canada}
