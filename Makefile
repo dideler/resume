@@ -56,7 +56,7 @@ get_watcher:
 
 .PHONY: get_basictex
 get_basictex:
-	@brew cask install basictex
+	@brew install basictex --cask
 
 .PHONY: get_latex_pkgs
 get_latex_pkgs: get_resume_latex_pkgs get_letter_latex_pkgs
@@ -83,7 +83,7 @@ uninstall: uninstall_watcher uninstall_latex_pkgs uninstall_basictex ## Uninstal
 
 .PHONY: uninstall_basictex
 uninstall_basictex:
-	@brew cask uninstall basictex
+	@brew uninstall basictex --cask
 
 .PHONY: uninstall_watcher
 uninstall_watcher:
