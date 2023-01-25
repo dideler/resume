@@ -26,15 +26,15 @@ build_letter: ## Builds letter PDF
 
 .PHONY: watch_resume
 watch_resume: ## Rebuilds resume on changes
-	@watcher -cmd="xargs $(pdflatex) -interaction=nonstopmode" -keepalive -pipe=true *resume.tex
+	@watcher -cmd="xargs $(pdflatex) -interaction=nonstopmode" -keepalive -pipe *resume.tex
 
 .PHONY: watch_cv
 watch_cv: ## Rebuilds curriculum vitae on changes
-	@watcher -cmd="xargs env CV=true $(pdflatex) -jobname=cv -interaction=nonstopmode" -keepalive -pipe=true *resume.tex
+	@watcher -cmd="xargs env CV=true $(pdflatex) -jobname=cv -interaction=nonstopmode" -keepalive -pipe *resume.tex
 
 .PHONY: watch_letter
 watch_letter: ## Rebuilds letter on changes
-	@watcher -cmd="xargs $(xelatex) -interaction=nonstopmode" -keepalive -pipe=true *letter.tex
+	@watcher -cmd="xargs $(xelatex) -interaction=nonstopmode" -keepalive -pipe *letter.tex
 
 .PHONY: versions
 versions: ## Shows installed versions of dependencies
