@@ -156,6 +156,65 @@
 %   Volunteered, Influenced, Increased/decreased, Ideas, Negotiated,
 %   Launched, Revenue/profits, Under budget, Won
 
+\WorkEntry{Consulting Software Engineer (Remote from UK)}{Jun 2020 - Feb 2022}
+{\href{https://www.glossier.com}{Glossier}, New York, US}
+{
+  \begin{itemize} \itemsep -1pt
+    \item Designed and built a robust and scalable order data pipeline,
+          creating an immutable audit trail of reliable operational and financial data.
+          The data stream introduced a decoupled data schema, laying the ground work
+          for a future eCommerce system, and enabled a diverse range of consumers
+          for any team to build product applications, perform analysis, and execute critical reporting.
+          % The eCommerce system and the database would overwrite data resulting in data loss and
+          % structure it in a way that makes it difficult to analyse.
+          % The data stream was modular and decoupled.
+          % The order pipeline was fed by events from the eCommerce system which were published
+          % whenever an event occurred that wrote order-related data.
+          % The events would ultimately feed into a data warehouse.
+          % The pipeline was incredibly robust, handled large events (which
+          % didn't fit through the pipes by default), deduplication, sorting, introduced
+          % a new order data schema by translating events in the stream that use the legacy schema,
+          % had its own monitoring and alerting, could handle spikes and outages,
+          % had various recovery procedures, had the option for consumers to replay events,
+          % and custom tooling to help inspect and debug events and the pipeline.
+          % It allowed for fan-out messaging, meaning anyone could subscribe and consume the data.
+          % With the creation of an order data pipeline, any team could now consume those published events.
+          % This enabled a new team to build a new major product, a customer loyalty program.
+          % I assisted them by introducing them to the order events, reviewing their requirements,
+          % building the consumer on their serverless service, and assisting the tech lead with processing the order data further downstream.
+    \item Researched and built innovative prototypes, such as an event sourcing solution for the order
+          data stream and time travel of historical order data to aid recovery and analsysis.
+          % which would take changes in data, represented as lightweight events, to build flexible data projections
+          % to answer questions. Events could be replayed, providing extra flexibility for testing,
+          % analsysis, and recovery. Data integrity is ensured by only appending data to create an
+          % immutable audit trail.
+    \item Significantly reduced financial and tax gaps which affected the accounting month end's
+          process and the company's revenue. Collaborated with the customer support and accounting
+          teams to fix issues in the data collection and standard operating procedures. Effectively
+          reducing the number of support tickets and improving the customer experience.
+          % Not collecting tax on orders. Collecting incorrect tax on orders. Wrong tax dates on orders. Etc.
+          % Overwriting order data. Reporting operations incorrectly.
+          % Deprecated eCommerce admin flows, redesigned admin flows (combine steps), new admin flows.
+          % Fixed a longstanding bug that affected order cancelations. Cancelation jobs would not retry.
+          % This would lead to dozens of tickets a day for the Customer Support team.
+    \item Increased org-wide engineering efficiency by improving monitoring of systems
+          and implementing a new deployment process for the monolith app's staging environment,
+          resulting in a non-blocking process for teams and individuals.
+          % Monitoring around admin SOPs, order cancelations, deployments
+          % (who, what, why, when, where, and how)
+          % Phased releases w/ feature flags, etc.
+          % Not exclusive to this role, have done this since FC.
+  \end{itemize}
+  \textbf{Tools:} Ruby, TypeScript, PostgreSQL, Fivetran, Snowflake, Solidus, AWS, Docker, DataDog
+  % AWS SQS, DynamoDB, Lambda, EventBridge, Kinesis
+  %
+  %                      /-> OTS \       /-> Loyalty                    /-> Accounting reports
+  % Glossier-V2 -> EventBridge -> Kinesis -> S3 -> Fivetran -> Snowflake
+  %           \               \-> ODS -> ODV                            \-> ODC
+  %            \-> S3 (large events)
+}
+\sepspace
+
 \WorkEntry{Senior Software Engineer}{Apr 2018 - Apr 2020}
 {\href{https://rekki.com/}{REKKI}, London, UK}
 {
