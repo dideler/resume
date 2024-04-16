@@ -615,22 +615,26 @@ Facebook Open Academy, 2013, 2014}{2011 - 2014}
 
 %%% Competitions
 %%% ------------------------------------------------------------
-\NewPart{Competitions}{}
-\SkillsEntry{2016}{\href{https://www.fca.org.uk/events/techsprints/consumer-access-techsprint}{Funding Circle won Best Tech award at FCA's inaugarual TechSprint}}
-\SkillsEntry{2012}{\href{https://dideler.github.io/notes/my-history-of-competitive-coding-acm-icpc}{Assistant coach for ACM International Collegiate Programming Contest}}
-\SkillsEntry{2011-2012}{Judge for the Niagara Region Secondary Schools Programming Contest}
-\SkillsEntry{2011}{\href{https://github.com/dideler/gps-tower-defense}{Brock Team placed top 25 at the nationwide Great Canadian Appathon}}
-\SkillsEntry{2008-2011}{\href{https://dideler.github.io/notes/my-history-of-competitive-coding-acm-icpc}{Contestant at ACM International Collegiate Programming Contest}}
+\ifCV{
+  \NewPart{Competitions}{}
+  \SkillsEntry{2016}{\href{https://www.fca.org.uk/events/techsprints/consumer-access-techsprint}{Funding Circle won Best Tech award at FCA's inaugarual TechSprint}}
+  \SkillsEntry{2012}{\href{https://dideler.github.io/notes/my-history-of-competitive-coding-acm-icpc}{Assistant coach for ACM International Collegiate Programming Contest}}
+  \SkillsEntry{2011-2012}{Judge for the Niagara Region Secondary Schools Programming Contest}
+  \SkillsEntry{2011}{\href{https://github.com/dideler/gps-tower-defense}{Brock Team placed top 25 at the nationwide Great Canadian Appathon}}
+  \SkillsEntry{2008-2011}{\href{https://dideler.github.io/notes/my-history-of-competitive-coding-acm-icpc}{Contestant at ACM International Collegiate Programming Contest}}
+}
 
 %%% Skills
 %%% ------------------------------------------------------------
-\NewPart{Skills}{}
+\ifCV{
+  \NewPart{Skills}{}
 
-%% When running low on space, consider using {\small text goes here} for skills
-\SkillsEntry{Languages}{English, Dutch (intermediate), Spanish (beginner)}
-% \sepspace
-% \SkillsEntry{}{}
-% \SkillsEntry{}{}
+  %% When running low on space, consider using {\small text goes here} for skills
+  \SkillsEntry{Languages}{English, Dutch (intermediate), Spanish (beginner)}
+  % \sepspace
+  % \SkillsEntry{}{}
+  % \SkillsEntry{}{}
+}
 
 %%% References
 %%% ------------------------------------------------------------
