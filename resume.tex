@@ -223,7 +223,7 @@
 
     % Tech lead for backend team when contractor tech lead left.
     % Introduced standups, work against tickets, report to cto & founder.
-    % Built some product, e.g. shared basket, socket endpoints, ...
+    % Built some product, e.g. shared basket, socket endpoints, api throttling, ...
     % Optimised ops flows (telegram/slack bots), event notifications, etc.
     % Make it easier to firefight by throttling critical failure alerts.
     % Tooling for growth marketing campaigns (event triggers, push notifs w/ custom messaging).
@@ -295,7 +295,7 @@
     %     (aws t2 instance out of credits due to bug in 3rd party profiling lib).
     %   - Move from http and async amqp apis to centralised db w/ polling and locking.
     %   - Built migration tool for Ops to find and migrate SMS-only suppliers.
-    \item Launched data science efforts by building initial data pipeline, processes, and delivery platform
+    \item Enabled data science efforts by building initial data pipeline, processes, and delivery platform
     %     Put all code and data (data processing, models, noteboooks) under version control.
     %     Evaluated platforms, built first version on SageMaker.
     %     Used S3 to backup models.
@@ -309,24 +309,36 @@
     %     Built ETL (extract, transform, load) data pipeline with redshift (early warehouse).
     %     Reduced load on production db - read replica. Managed AWS and DB roles and perms.
     %     Ensured data availability, assisted with data questions and data access.
-    \item Led backend and infra teams in their early stages by defining practices, setting goals,
-    being the point person, reporting progress and risks to Founder \& CTO, and defining roadmap and KPIs % L193
-    \item Created business opportunities and enabled teams by tackling major architectural and data debt % L229-238
-    \item Built new product, e.g. invoice uploading, internal APIs for buyer app, public APIs for suppliers
+    \item Led backend and infra teams in their early stages by defining practices and ceremonies;
+          setting goals; introducing monitoring and dashboards; managing cloud infra and roles;
+          ensuring uptime and performance of core systems;
+          performing critical data, platform, and code migrations + upgrades;
+          defining team manifesto, roadmap, KPIs, and SOPs; reporting to Founder \& CTO
+          % Did major upgrade of PostgreSQL without any data loss and minimal (predictable) down time
+          % Helped migrate from CouchDB to PostgreSQL
+          % Performed many data migrations
+          % Helped migrate to Kubernetes
+          % Handled GDPR requests (automated)
+          % Helped introduce buyer branches (introduce concept of buyers and branches)
+    \item Supported concepts of buyer, branch, and supplier into the codebase and data schemas
+          which required tackling major architectural and data debt
     \item Responsible for the reliable end-to-end deliverability of orders through various mediums
-    %     Big focus on making SMS more reliable, easier to troubleshoot, and cheaper.
-    %     Built automated recurring reports for SMS (numbers) and email (spam).
-    %     Collect tons of metrics and build dashboards with tons of graphs and alerts.
-    %     Help define and achieve KPIs for deliverability.
-    %     Implement supplier integration HTTP and FTP APIs.
-    %     Help simplify mailer app architecture to make it more reliable and easier to use.
-    \ifCV{
-    \item Managed a core subset of our early cloud infrastructure and roles
-    }
+          %     Big focus on making SMS more reliable, easier to troubleshoot, and cheaper.
+          %     Built automated recurring reports for SMS (numbers) and email (spam).
+          %     Collect tons of metrics and build dashboards with tons of graphs and alerts.
+          %     Help define and achieve KPIs for deliverability.
+          %     Implement supplier integration HTTP and FTP APIs.
+          %     Help simplify mailer app architecture to make it more reliable and easier to use.
+          %     Rewrote a much simpler and more accurate ordering system in Go (original Elixir + RMQ).
+    \item Built new client facing products and internal tooling,
+          e.g. invoice uploading, internal HTTP/Websocket APIs for mobile buyer app, public HTTP/FTP APIs for suppliers,
+          Slack and Telegram chat bots, custom targeting with push notification for growth experiments,
+          automated reports, analytics, metrics, alerting, handling GDPR requests, and much more
    \end{itemize}
-  \textbf{Tools:} Elixir, Ruby, Python, Go, JS, RabbitMQ, PostgreSQL, GitLab, AWS, Docker, K8s, Grafana
+  \textbf{Tools:} Elixir, Ruby, Python, Go, JS, RabbitMQ, PostgreSQL, AWS, Docker, K8s, Grafana
 }
 \sepspace
+% TODO: https://medium.com/rekkiapp/version-management-with-brew-and-asdf-fb7aa78b98e6
 
 \WorkEntry{Senior Software Engineer}{Mar 2017 - Apr 2018}
 {\href{https://www.findmypast.co.uk/}{Findmypast}, London, UK}
@@ -343,6 +355,8 @@
   \textbf{Tools:} JavaScript, React, GraphQL, Elixir, Phoenix, TeamCity, Trello, LaunchDarkly
 }
 \sepspace
+% TODO: https://tech.findmypast.com/co-author-commits-with-git-mob/
+%       https://web.archive.org/web/20230129020354/https://tech.findmypast.com/co-author-commits-with-git-mob/
 
 \WorkEntry{Software Engineer}{Feb 2015 - Oct 2016}
 {\href{https://www.fundingcircle.com/}{Funding Circle}, London, UK}
@@ -377,8 +391,10 @@
   \textbf{Tools:} Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS, RabbitMQ
 }
 \sepspace
+% TODO: https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/
+%       https://web.archive.org/web/20230129014921/https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/
 
-\WorkEntry{Consultant (Remote)}{Sep 2014 - Feb 2015}
+\WorkEntry{Consulting Software Engineer (Remote from UK)}{Sep 2014 - Feb 2015}
 {\href{https://www.landlordwebsolutions.com/}{Landlord Web Solutions}, Ontario, Canada}
 {
   \begin{itemize} \itemsep -1pt
@@ -449,6 +465,8 @@
   }
 }
 
+\ifCV{
+
 %%% Organizations
 %%% ------------------------------------------------------------
 \NewPart{Organizations}{}
@@ -456,47 +474,36 @@
 \OrganizationEntry{OpenHack London}{2014 - 2015} % Aug 2014 - Oct 2015
 {Co-organizer, \href{https://openhack.github.io/london/}{openhack.github.io/london}}
 {
-  \ifCV{
   \begin{itemize} \itemsep -1pt
     \item Free monthly social coding meetup held in Central London
   \end{itemize}
-  }
 }
-\ifCV{\sepspace}
+\sepspace
 
 \OrganizationEntry{Software Niagara}{2012 - 2014}
 {Co-organizer \& Member, \href{https://www.softwareniagara.com/}{softwareniagara.com}}
 {
   \begin{itemize} \itemsep -1pt
-    \ifCV{
     \item Grassroots movement aimed at improving the Niagara Region tech scene
     \item Organized social and informative events, such as DemoCamps, DevTricks, and Coworking
     \item Built \href{https://github.com/softwareniagara/voteinpublic.com}{voteinpublic.com} as a team weekend project
-    }
   \end{itemize}
 }
 \sepspace
 
-\OrganizationEntry{Facebook Open Academy}{2013 - 2014}
-{\href{https://www.facebook.com/notes/facebook-engineering/facebook-open-academy-bringing-open-source-to-cs-curricula/10151806121378920/}{Mentor for Freeseer}}
-{}
-% \sepspace
-
-\OrganizationEntry{Google Summer of Code}{2012}
-{\href{https://www.google-melange.com/archive/gsoc/2011}{Mentor for Freeseer}} % https://opensource.googleblog.com/2011/06/whos-new-in-google-summer-of-code-part.html
-{}
-% \sepspace
-
-\OrganizationEntry{Undergraduate Capstone Open Source Programs (UCOSP)}{2011 - 2014}
-{Student and Mentor, \href{http://ucosp.ca/}{ucosp.ca}}
+\OrganizationEntry{Undergraduate Capstone Open Source Programs (UCOSP), 2011 \\
+Google Summer of Code, 2012 \\
+Facebook Open Academy, 2013, 2014}{2011 - 2014}
+{Contributor and Mentor for Freeseer, \href{http://ucosp.ca/}{ucosp.ca}, \href{https://www.facebook.com/notes/facebook-engineering/facebook-open-academy-bringing-open-source-to-cs-curricula/10151806121378920/}{facebook.com}, \href{https://www.google-melange.com/archive/gsoc/2011}{google.com}}
+% https://opensource.googleblog.com/2011/06/whos-new-in-google-summer-of-code-part.html
 {
   \begin{itemize} \itemsep -1pt % Reduce space between items.
-    \item First Brock student to participate in an experimental programme for gaining industry experience
+    \item First Brock student to participate in an experimental apprenticeship programme in 2011
     \item Contributed to \href{http://freeseer.readthedocs.io/}{Freeseer}, open source screencasting software designed for recording conferences
-    % \item Document Freeseer by writing user and contributor guides
-    % \item Mentor for Undergraduate Capstone Open Source Programs (UCOSP) in 2012, 2013, 2014
-    % \item Mentor for Facebook Open Academy in 2013, 2014
-    % \item Mentor for Google Summer of Code (GSoC) in 2012
+    \item Documented Freeseer by creating a website and writing user and contributor guides
+    \item Mentor for Undergraduate Capstone Open Source Programs (UCOSP) in 2012, 2013, 2014
+    \item Mentor for Facebook Open Academy in 2013, 2014
+    \item Mentor for Google Summer of Code (GSoC) in 2012
   \end{itemize}
 }
 \sepspace
@@ -528,11 +535,12 @@
 \OrganizationEntry{BrockBots Message Board}{2009 - 2011}
 {Co-founder \& Moderator, \href{https://web.archive.org/web/20110208180409/http://brockbots.cosc.brocku.ca/}{brockbots.cosc.brocku.ca}}
 {
- \begin{itemize} \itemsep -1pt
-   \item Created the first Computer Science message board for Brock University students
-   \item Utilised various marketing strategies to grow forum to $\sim$100 members with over 850 posts % Pitched at intro classes, cold emails COSC members, campus posters
- \end{itemize}
+  \begin{itemize} \itemsep -1pt
+    \item Created the first Computer Science message board for Brock University students
+    \item Utilised various marketing strategies to grow forum to $\sim$100 members with over 850 posts % Pitched at intro classes, cold emails COSC members, campus posters
+  \end{itemize}
 }
+} % End \ifCV{
 
 %%% Education
 %%% ------------------------------------------------------------
@@ -544,23 +552,41 @@
 {
 \begin{itemize}  \itemsep -1pt
   \item Concentration in Intelligent Systems (Artificial Intelligence)
-  \item Deans' Honours List, 2011
+  \item Deans' Honours List % 2011
   \item Tutored introductory Computer Science, Math, and Applied Computing courses, 2011-2013
-  \item Contestant at ACM International Collegiate Programming Contest (ACM ICPC), 2008-2011
-  \item Assistant coach for ACM International Collegiate Programming Contest (ACM ICPC), 2012
-  % Prepared ACM ICPC teams through tryouts and coaching (\href{https://github.com/brockcsc/acm-icpc}{github.com/brockcsc/acm-icpc})
-  \item Judge for the Niagara Region Secondary Schools Programming Contest, 2011-2012
-  \ifCV{
   \item Representative at Ontario Universities' Fair, Fall Preview Day, and CSEdWeek, 2009, 2012
   \item Guest speaker at Co-op Student Panel Workshop, 2010-2012
+  % Prepared ACM ICPC teams through tryouts and coaching (\href{https://github.com/brockcsc/acm-icpc}{github.com/brockcsc/acm-icpc})
+  \ifCV{
   \item Co-founded Chess Club, 2010 % http://www.brockpress.com/2010/02/unclassifieds-185/
   \item Deputy leader of a 7-person team that produced a cross-platform media center, 2009-2010
   }
 \end{itemize}
 }
 
-%%% Projects (TODO)
+%%% Projects
 %%% ------------------------------------------------------------
+% \NewPart{Projects (Open Source)}{}
+% \SkillsEntry{2016-2020}{\href{https://github.com/dideler/toggle-youtube-comments}{Toggle YouTube Comments}}
+% \SkillsEntry{2018}{\href{https://github.com/findmypast-oss/git-mob}{Git Mob}}
+% \SkillsEntry{2015-2016}{\href{https://web.archive.org/web/20201106154903/https://github.com/FundingCircle/shipment_tracker}{Shipment Tracker}}
+% 20212, 2020 https://github.com/dideler/brocku-reddit-for-chrome
+% 2020 https://github.com/dideler/watcher
+% 2015-2016 https://github.com/FundingCircle/dotatom
+% 2011-2014 https://github.com/Freeseer/freeseer
+% 2012 https://github.com/dideler/android-calculator
+% 2012 https://github.com/dideler/HiFive
+% 2011 https://code.google.com/archive/p/basic-browser-chess/
+% 2013 https://github.com/dideler/chess-park
+% 2018 https://github.com/dideler/download-google-extensions
+% 2015-2017 https://github.com/dideler/do-it
+% 2019-2020 https://github.com/dideler/ex_aws_sagemaker_runtime
+% 2019-2021 https://github.com/dideler/fish-index
+% 2018-2021 https://github.com/dideler/fish-dl
+% 2016-2021 https://github.com/dideler/fish-cd-git
+% 2019-2021 https://github.com/dideler/docker-fish-shell
+% TODO: add more to this list then decide which to display as notable
+
 %Maestro
 %-------
 %what: built a powerful cross-platform media center with 6 teammates, that's
@@ -571,6 +597,22 @@
 %results: highest graded project in course, fully functional, and met deadlines
 %measurable: over the course of two semesters (one semester for planning and design, the other for
 %            implementation)
+
+%%% Writing
+%%% ------------------------------------------------------------
+\NewPart{Writing}{}
+\SkillsEntry{2018}{\href{https://medium.com/rekkiapp/version-management-with-brew-and-asdf-fb7aa78b98e6}{REKKI: Version management with Homebrew and asdf}}
+\SkillsEntry{2018}{\href{https://web.archive.org/web/20230129020354/https://tech.findmypast.com/co-author-commits-with-git-mob/}{Findmypast: Co-author Commits with Git Mob}} % https://tech.findmypast.com/co-author-commits-with-git-mob/
+\SkillsEntry{2016}{\href{https://web.archive.org/web/20230129014921/https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/}{Funding Circle: Shipping in FinTech}} % https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/
+
+%%% Competitions
+%%% ------------------------------------------------------------
+\NewPart{Competitions}{}
+\SkillsEntry{2016}{\href{https://www.fca.org.uk/events/techsprints/consumer-access-techsprint}{Funding Circle won Best Tech award at FCA's inaugarual TechSprint}}
+\SkillsEntry{2012}{\href{https://dideler.github.io/notes/my-history-of-competitive-coding-acm-icpc}{Assistant coach for ACM International Collegiate Programming Contest}}
+\SkillsEntry{2011-2012}{Judge for the Niagara Region Secondary Schools Programming Contest}
+\SkillsEntry{2011}{\href{https://github.com/dideler/gps-tower-defense}{Brock Team placed top 25 at the nationwide Great Canadian Appathon}}
+\SkillsEntry{2008-2011}{\href{https://dideler.github.io/notes/my-history-of-competitive-coding-acm-icpc}{Contestant at ACM International Collegiate Programming Contest}}
 
 %%% Skills
 %%% ------------------------------------------------------------
