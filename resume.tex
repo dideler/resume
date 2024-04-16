@@ -6,7 +6,7 @@
 \usepackage[utf8x]{inputenc}
 \usepackage[protrusion=true,expansion=true]{microtype}
 \usepackage[svgnames]{xcolor}  % Colours by their 'svgnames'
-\usepackage{geometry}
+\usepackage[top=1in]{geometry} % Reduce top-margin by 1-inch
   \textheight=700px
 \usepackage{url}
 \usepackage{lmodern} % Allow arbitrary font sizes
@@ -106,7 +106,7 @@
     \normalsize \par}
 
 \newcommand{\OrganizationEntry}[4]{         % Similar to \EducationEntry
-    \noindent \textbf{#1} \hfill            % Jobname
+    \noindent \textbf{#1} \hfill            % Org
     \colorbox{Black}{\color{White}#2} \par  % Duration
     \noindent \textit{#3} \par              % Company
     \noindent\hangindent=2em\hangafter=0 \small #4 % Description
