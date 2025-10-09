@@ -59,7 +59,11 @@ get_basictex:
 	@brew install basictex --cask
 
 .PHONY: get_latex_pkgs
-get_latex_pkgs: get_resume_latex_pkgs get_letter_latex_pkgs
+get_latex_pkgs: update_tlmgr get_resume_latex_pkgs get_letter_latex_pkgs
+
+.PHONY: update_tlmgr
+update_tlmgr:
+	@sudo $(tlmgr) update --self
 
 .PHONY: get_resume_latex_pkgs
 get_resume_latex_pkgs:
