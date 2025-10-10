@@ -71,23 +71,23 @@
 
 \newcommand{\NewPart}[1]{\section*{\uppercase{#1}}}
 
-\newcommand{\PersonalEntry}[2]{
-    \noindent\hangindent=2em\hangafter=0  % Indentation
+\newcommand{\PersonalEntry}[2]{           % Args: Entry name, Entry value
+    \noindent\hangindent=0em\hangafter=0  % Indentation
     \parbox{\spacebox}{                   % Box to align text
-    \textit{#1}}                          % Entry name (birth, address, etc.)
-    \hspace{1.5em} #2 \par}               % Entry value
+    \textit{#1}}                          % Entry name (year, label, address, etc.)
+    \hspace{1.0em} #2 \par}               % Entry value with spacing
 
-\newcommand{\SkillsEntry}[2]{             % Same as \PersonalEntry
-    \noindent\hangindent=2em\hangafter=0  % Indentation
+\newcommand{\SkillsEntry}[2]{             % Args: Entry name, Entry value
+    \noindent\hangindent=0em\hangafter=0  % Indentation
     \parbox{\spacebox}{                   % Box to align text
-    \textit{#1}}                          % Entry name (birth, address, etc.)
-    \hspace{1.5em} #2 \par}               % Entry value
+    \textit{#1}}                          % Entry name (year, label, address, etc.)
+    \hspace{1.0em} #2 \par}               % Entry value with spacing
 
-\newcommand{\AwardsEntry}[2]{             % Same as \PersonalEntry
-    \noindent\hangindent=2em\hangafter=0  % Indentation
+\newcommand{\AwardsEntry}[2]{             % Args: Entry name, Entry value
+    \noindent\hangindent=0em\hangafter=0  % Indentation
     \parbox{\spacebox}{                   % Box to align text
-    \textit{#1}}                          % Entry name (birth, address, etc.)
-    \hspace{1.5em} #2 \par}               % Entry value
+    \textit{#1}}                          % Entry name (year, label, address, etc.)
+    \hspace{1.0em} #2 \par}               % Entry value with spacing
 
 \newcommand{\EducationEntry}[4]{
     \noindent \textbf{#1} \hfill        % Study
