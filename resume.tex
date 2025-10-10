@@ -19,7 +19,7 @@
   linkcolor   = blue, % Colour of internal links
   citecolor   = red   % Colour of citations
 ]{hyperref} % Clickable hyperlinks
-
+\usepackage{ifthen}
 \usepackage{etoolbox} % Programming tools for package authors. We use it for string comparison.
 
 %% Capture environment variables into a control sequence. Only works with pdflatex.
@@ -98,14 +98,28 @@
     \noindent\hangindent=2em\hangafter=0 \small #4 % Description
     \normalsize \par}
 
-\newcommand{\WorkEntry}[4]{             % Same as \EducationEntry
-    \noindent \textbf{#1} \hfill        % Jobname
-    \colorbox{Black}{%
-      \parbox{9em}{%
-      \hfill\color{White}#2}} \par      % Duration
-        \noindent \textit{#3} \par      % Company
-    \noindent\hangindent=2em\hangafter=0 \small #4 % Description
-    \normalsize \par}
+\newcommand{\WorkEntry}[6]{%
+  \noindent \textbf{#1} \hfill                      % Role
+  \colorbox{Black}{%
+    \parbox{9em}{%
+    \hfill\color{White}#2}} \par                    % Duration
+  \noindent \textit{#3} \par                        % Company
+  % Expansion logic:
+  \getenv[\CV]{CV}
+  \ifthenelse{\equal{#6}{collapseDetailsOnResume} \AND \not\equal{\CV}{true}}{}{%
+    \noindent\hangindent=2em\hangafter=0 \small #4  % Description
+    \normalsize \par
+    \ifx&#5&\else % Consider removing this arg and making tools an item in description, e.g. `'\item \textbf{Tools:} ...`
+      {\small
+        \hspace{0.0em}\textbf{Tools:} #5 \par       % Tools (if provided)
+        % If you want Tools section aligned with bullet point instead of bullet's text:
+        % \noindent\hangindent=0em\hangafter=0 \textbf{Tools:} #5 \par
+      }
+    \fi
+  }
+  \sepspace
+}
+% E.g.: \WorkEntry{Title}{Dates}{Company}{Description}{[Tools]}[{collapseDetailsOnResume}]
 
 \newcommand{\OrganizationEntry}[4]{         % Similar to \EducationEntry
     \noindent \textbf{#1} \hfill            % Org
@@ -165,13 +179,13 @@
 \ifCV{
   \WorkEntry{Managing Director}{Oct 2021 - Present}
   {\href{https://surgite.properties/}{Surgite Properties}, London, UK}
-  \smallskip
+  {}{}
 }
 
 \ifCV{
   \WorkEntry{Managing Director}{Oct 2020 - Jan 2024}
   {\href{https://reledi.consulting}{Reledi Consulting}, London, UK}
-  \smallskip
+  {}{}
 }
 
 \WorkEntry{Contract Software Engineer (Thimble Consulting)}{Jun 2020 - Feb 2022}
@@ -223,7 +237,6 @@
           % Phased releases w/ feature flags, etc.
           % Not exclusive to this role, have done this since FC.
   \end{itemize}
-  \textbf{Tools:} Ruby, TypeScript, PostgreSQL, Fivetran, Snowflake, Solidus, AWS, Docker, DataDog
   % AWS SQS, DynamoDB, Lambda, EventBridge, Kinesis
   %
   %                      /-> OTS \       /-> Loyalty                    /-> Accounting reports
@@ -355,8 +368,7 @@
    \end{itemize}
   \textbf{Tools:} Elixir, Ruby, Python, Go, JS, RabbitMQ, PostgreSQL, AWS, Docker, K8s, Grafana
 }
-\sepspace
-% TODO: https://medium.com/rekkiapp/version-management-with-brew-and-asdf-fb7aa78b98e6
+{Elixir, Ruby, Python, Go, JS, RabbitMQ, PostgreSQL, AWS, Docker, K8s, Grafana}
 
 \WorkEntry{Senior Software Engineer}{Mar 2017 - Apr 2018}
 {\href{https://www.findmypast.co.uk/}{Findmypast}, London, UK}
@@ -370,9 +382,8 @@
     \item Launched a new product for searching records on geographical maps. Very positive user feedback.
     \item Actively involved in hiring, guilds, and developer relations (events, blog, open source, etc.)
   \end{itemize}
-  \textbf{Tools:} JavaScript, React, GraphQL, Elixir, Phoenix, TeamCity, Trello, LaunchDarkly
 }
-\sepspace
+{JavaScript, React, GraphQL, Elixir, Phoenix, TeamCity, Trello, LaunchDarkly}
 % TODO: https://tech.findmypast.com/co-author-commits-with-git-mob/
 %       https://web.archive.org/web/20230129020354/https://tech.findmypast.com/co-author-commits-with-git-mob/
 
@@ -405,10 +416,10 @@
     \item Delivered reliable software using Extreme Programming (XP) practices adopted from Pivotal % http://c2.com/cgi/wiki?ExtremeProgramming
     \item Actively involved in hiring, guilds, and developer relations (events, blog, open source, etc.)
     }
+    % \item \textbf{Tools:} Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS, RabbitMQ
   \end{itemize}
-  \textbf{Tools:} Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS, RabbitMQ
 }
-\sepspace
+{Ruby, Rails, PostgreSQL, GitHub, Capistrano, Jenkins, Docker, JIRA, AWS, RabbitMQ}
 % TODO: https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/
 %       https://web.archive.org/web/20230129014921/https://engineering.fundingcircle.com/blog/2016/09/06/shipping-in-fintech/
 
@@ -418,14 +429,12 @@
   \begin{itemize} \itemsep -1pt
     \item Lead developer on a project for analytics and metrics in the apartment rental industry % Lead tracking
   \end{itemize}
-  \textbf{Tools:} Ruby, Rails, RSpec, PostgreSQL, Git, GitHub, Heroku, Mailgun, Python
 }
-\sepspace
+{Ruby, Rails, RSpec, PostgreSQL, Git, GitHub, Heroku, Mailgun, Python}
 
 \WorkEntry{Software Developer}{Jan 2014 - Jun 2014}
 {\href{https://www.landlordwebsolutions.com/}{Landlord Web Solutions}, Ontario, Canada}
 {
-  \ifCV{
   \begin{itemize} \itemsep -1pt
     \item Developed a content management system for our annual Landlord WEBCON conference
     %     Admins could search and manage ticket sales/vacancies, invoices, promo codes, and sponsors.
@@ -438,15 +447,13 @@
     %     User testing via http://peek.usertesting.com/ and wrote a report and gave hands-on feedback.
     %     Spam testing of emails, and more, see https://gist.github.com/dideler/534e5996bbbbfe9e0f59
   \end{itemize}
-  \textbf{Tools:} Ruby, Rails, MySQL, CoffeeScript, Bootstrap, Git, GitHub, Heroku, Sendgrid
-  }
 }
-\ifCV{\sepspace}
+{Ruby, Rails, MySQL, CoffeeScript, Bootstrap, Git, GitHub, Heroku, Sendgrid}
+{collapseDetailsOnResume}
 
 \WorkEntry{Systems Analyst (Co-op)}{May 2010 - Dec 2010}
 {\href{https://www.ontario.ca/page/ministry-transportation}{Ministry of Transportation of Ontario}, Ontario, Canada}
 {
-  \ifCV{
   \begin{itemize} \itemsep -1pt
     \item Collaborated effectively with supervisors, co-workers, and consultants
           to migrate the legacy ministry-wide intranet site to a new
@@ -461,15 +468,14 @@
     %• Security eForm
     %• Green IT Initiative
   \end{itemize}
-  \textbf{Tools:} Microsoft Sharepoint, JavaScript, jQuery, HTML, CSS, UML
-  } % Detailed MTO work experience: http://goo.gl/IQ2Uc
+  % Detailed MTO work experience: http://goo.gl/IQ2Uc
 }
-\ifCV{\sepspace}
+{Microsoft Sharepoint, JavaScript, jQuery, HTML, CSS, UML}
+{collapseDetailsOnResume}
 
 \WorkEntry{Data Specialist (Co-op)}{Jan 2009 - Apr 2009}
 {\href{http://web.archive.org/web/20191222004723/http://www.genieknows.com}{GenieKnows Inc.}, Nova Scotia, Canada}
 {
-  \ifCV{
   \begin{itemize} \itemsep -1pt
     \item Enhanced business data for results used to provide the search and
           mapping features of GenieKnows Local Search (now yellowee.com)
@@ -479,9 +485,9 @@
           crawlers for content on the Surface Web and Deep Web.
     %\item % Daily duties included: identifying data requirements, researching data sources, automating the downloading and processing/formatting of data, evaluating data quality, writing technical documentation, logging bugs, and logging progress.
   \end{itemize}
-  \textbf{Tools:} Linux shell scripting (bash), Ruby, Watir, Selenium, Trac, Subversion (SVN)
-  }
 }
+{Linux shell scripting (bash), Ruby, Watir, Selenium, Trac, Subversion (SVN)}
+{collapseDetailsOnResume}
 
 \ifCV{
 
